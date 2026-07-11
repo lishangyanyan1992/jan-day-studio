@@ -22,6 +22,9 @@ test("server-renders the Jan Day landing page", async () => {
   assert.match(html, /<title>Jan Day \| Thoughtful wedding rentals<\/title>/i);
   assert.match(html, /Every detail\.\s*<br[^>]*>\s*Beautifully considered\./i);
   assert.match(html, /Build your wishlist/i);
+  assert.match(html, /Madison celebrations/i);
+  assert.match(html, /Pick up in Madison/i);
+  assert.match(html, /Let us source it/i);
   assert.match(html, /Tell us about\s*<br[^>]*>\s*your day\./i);
   assert.doesNotMatch(html, /codex-preview|react-loading-skeleton|Your site is taking shape/i);
 });

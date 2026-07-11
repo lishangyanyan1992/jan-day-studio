@@ -13,9 +13,11 @@ export function InquiryForm() {
     const name = form.get("name")?.toString().trim() || "";
     const date = form.get("date")?.toString().trim() || "";
     const location = form.get("location")?.toString().trim() || "";
+    const requestType = form.get("requestType")?.toString().trim() || "";
+    const fulfillment = form.get("fulfillment")?.toString().trim() || "";
     const notes = form.get("notes")?.toString().trim() || "";
     const subject = encodeURIComponent(`Jan Day inquiry from ${name}`);
-    const body = encodeURIComponent(`Name: ${name}\nWedding date: ${date}\nVenue or city: ${location}\n\nA little more about the day:\n${notes}`);
+    const body = encodeURIComponent(`Name: ${name}\nWedding date: ${date}\nVenue or city: ${location}\nI’m looking for: ${requestType}\nRental fulfillment: ${fulfillment}\n\nA little more about the day:\n${notes}`);
 
     window.location.href = `mailto:${contactEmail}?subject=${subject}&body=${body}`;
     setSubmitted(true);
@@ -32,12 +34,31 @@ export function InquiryForm() {
         <input name="date" type="date" required />
       </label>
       <label>
-        Venue or city
+        Madison-area venue or city
         <input name="location" required placeholder="Where are you celebrating?" />
       </label>
       <label>
+        I&apos;m looking for
+        <select name="requestType" defaultValue="" required>
+          <option value="" disabled>Select an option</option>
+          <option>Rentals from the Jan Day collection</option>
+          <option>Products Jan Day can source and order</option>
+          <option>A mix of rentals and sourced products</option>
+          <option>I&apos;m not sure yet</option>
+        </select>
+      </label>
+      <label>
+        Rental fulfillment
+        <select name="fulfillment" defaultValue="" required>
+          <option value="" disabled>Select an option</option>
+          <option>Pickup in Madison by appointment</option>
+          <option>Ask for a delivery quote</option>
+          <option>Not sure yet</option>
+        </select>
+      </label>
+      <label>
         A little more about the day
-        <textarea name="notes" rows={5} placeholder="Guest count, pieces you’re looking for, the feeling you’re after…" />
+        <textarea name="notes" rows={5} placeholder="Guest count, pieces or products you’re looking for, the feeling you’re after…" />
       </label>
       <button className="button button--dark" type="submit">
         Begin your inquiry <span aria-hidden="true">→</span>

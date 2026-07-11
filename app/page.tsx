@@ -25,10 +25,10 @@ const collections = [
 ];
 
 const steps = [
-  ["01", "Explore", "Begin with the pieces that feel most like you."],
-  ["02", "Build your wishlist", "Save your favorites and share the shape of your celebration."],
-  ["03", "Receive your quote", "We review availability, delivery, and the details that make it work."],
-  ["04", "Bring it to life", "We prepare every piece for a seamless celebration."],
+  ["01", "Explore", "Browse rentals or tell us what you would like us to source."],
+  ["02", "Choose your way", "Pick up in Madison by appointment, or ask us about delivery."],
+  ["03", "Receive your quote", "We confirm availability, sourcing, and the details that make it work."],
+  ["04", "Celebrate", "Your pieces are prepared with care, ready for your day."],
 ];
 
 export default function Home() {
@@ -40,7 +40,7 @@ export default function Home() {
             Jan Day
           </a>
           <div className="nav-links">
-            <a href="#collections">Rentals</a>
+            <a href="#collections">Rentals &amp; sourcing</a>
             <a href="#our-story">Our approach</a>
             <a href="#inquire">Contact</a>
           </div>
@@ -51,30 +51,30 @@ export default function Home() {
 
         <div className="hero-content page-shell">
           <div className="hero-copy reveal">
-            <p className="eyebrow eyebrow--light">Curated rentals, timeless celebrations</p>
+            <p className="eyebrow eyebrow--light">Thoughtful rentals for Madison celebrations</p>
             <h1>Every detail.<br />Beautifully considered.</h1>
             <p className="hero-intro">
-              Thoughtful pieces for wedding days that feel relaxed, personal, and entirely your own.
+              Thoughtful pieces for Madison-area wedding days that feel relaxed, personal, and entirely your own.
             </p>
             <a className="button button--cream" href="#collections">
               Explore the collection <span aria-hidden="true">→</span>
             </a>
           </div>
           <div className="hero-note" aria-label="Jan Day promise">
-            <span>Designed for the way you gather.</span>
+            <span>Pick up in Madison.</span>
             <i />
-            <span>Delivered with care.</span>
+            <span>Or let us bring it to you.</span>
           </div>
         </div>
       </section>
 
       <section className="intro page-shell" id="our-story">
-        <p className="eyebrow">A more considered way to rent</p>
+        <p className="eyebrow">A more considered way to gather</p>
         <div className="intro-grid">
           <h2>Create a setting<br />that feels like you.</h2>
           <div className="intro-text">
             <p>
-              Jan Day is a collection of softly layered furnishings and tabletop pieces for celebrations with a point of view. We make it easy to pull together a beautiful day, without making it feel overdone.
+              Jan Day brings softly layered furnishings and tabletop pieces to Madison-area celebrations with a point of view. Rent from our collection, pick up by appointment, or ask us to source the pieces you have been looking for.
             </p>
             <a className="text-link" href="#inquire">Meet Jan Day <span aria-hidden="true">↗</span></a>
           </div>
@@ -84,10 +84,10 @@ export default function Home() {
       <section className="collections-section" id="collections">
         <div className="page-shell section-heading">
           <div>
-            <p className="eyebrow">The collection</p>
+            <p className="eyebrow">Rentals &amp; sourcing</p>
             <h2>Pieces with presence.</h2>
           </div>
-          <p>Collected with a soft spot for natural materials, beautiful proportions, and the small things guests remember.</p>
+          <p>Begin with our collection, or bring us the reference photo, detail, or feeling you have in mind. We&apos;ll help you find the right fit.</p>
         </div>
         <div className="collection-grid page-shell">
           {collections.map((collection) => (
@@ -103,6 +103,23 @@ export default function Home() {
               </div>
             </article>
           ))}
+        </div>
+        <div className="service-options page-shell" aria-label="Rental and sourcing options">
+          <article>
+            <span>01</span>
+            <h3>Rent from the collection</h3>
+            <p>Choose the furniture, tabletop, and ceremony pieces that are ready for your celebration.</p>
+          </article>
+          <article>
+            <span>02</span>
+            <h3>Pick up in Madison</h3>
+            <p>Keep things simple with scheduled pickup in Madison, arranged around your event timeline.</p>
+          </article>
+          <article>
+            <span>03</span>
+            <h3>Let us source it</h3>
+            <p>Have a specific item in mind? We can source and order products that complete your vision.</p>
+          </article>
         </div>
       </section>
 
@@ -128,7 +145,7 @@ export default function Home() {
           <p className="eyebrow eyebrow--light">For celebrations that feel lived in</p>
           <h2>Let&apos;s create<br />something beautiful.</h2>
           <p>
-            Whether you are planning an intimate dinner or a full weekend celebration, we&apos;ll help you choose the pieces that carry the feeling through.
+            Whether you are planning an intimate dinner or a full weekend celebration, we&apos;ll help you rent, source, and gather the pieces that carry the feeling through.
           </p>
           <a className="button button--cream" href="#inquire">Start your wishlist <span aria-hidden="true">→</span></a>
         </div>
@@ -139,10 +156,10 @@ export default function Home() {
           <p className="eyebrow">Start here</p>
           <h2>Tell us about<br />your day.</h2>
           <p>
-            Share the date, place, and feeling you&apos;re hoping to create. We&apos;ll be in touch with a thoughtful starting point.
+            Share the date, Madison-area venue or pickup timeline, and the feeling you&apos;re hoping to create. We&apos;ll be in touch with a thoughtful starting point.
           </p>
           <div className="contact-detail">
-            <span>For planners &amp; press</span>
+            <span>Madison pickup &amp; sourcing requests</span>
             <a href="mailto:hello@jandayrentals.com">hello@jandayrentals.com</a>
           </div>
         </div>
@@ -151,9 +168,9 @@ export default function Home() {
 
       <footer className="footer page-shell">
         <a className="brand" href="#top">Jan Day</a>
-        <p>Thoughtful rentals for meaningful gatherings.</p>
+        <p>Thoughtful rentals and sourcing for Madison gatherings.</p>
         <div className="footer-links">
-          <a href="#collections">Rentals</a>
+          <a href="#collections">Rentals &amp; sourcing</a>
           <a href="#our-story">Our approach</a>
           <a href="#inquire">Inquire</a>
         </div>
