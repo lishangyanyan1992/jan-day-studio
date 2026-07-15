@@ -33,3 +33,19 @@ test("brand guide is a standalone HTML document", async () => {
   assert.match(html, /Bodoni Moda/i);
   assert.match(html, /Thoughtful rentals and sourcing for Madison gatherings/i);
 });
+
+test("the about page tells the founders' story and is linked from home", async () => {
+  const [home, about] = await Promise.all([
+    readFile(new URL("../app/page.tsx", import.meta.url), "utf8"),
+    readFile(new URL("../app/about/page.tsx", import.meta.url), "utf8"),
+  ]);
+
+  assert.match(home, /href="\/about"/i);
+  assert.match(home, /Meet Yanyan &amp; Jen/i);
+  assert.match(about, /Yanyan and Jen/i);
+  assert.match(about, /It started with/i);
+  assert.match(about, /our own wedding/i);
+  assert.match(about, /building efficient startups/i);
+  assert.match(about, /yanyan-and-jen-wedding\.jpg/i);
+  assert.match(about, /Your wedding should reflect the people/i);
+});
