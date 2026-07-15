@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { Bodoni_Moda, DM_Sans } from "next/font/google";
-import { headers } from "next/headers";
 import "./globals.css";
 
 const serif = Bodoni_Moda({
@@ -15,36 +14,32 @@ const sans = DM_Sans({
   weight: ["400", "500", "600"],
 });
 
-export async function generateMetadata(): Promise<Metadata> {
-  const requestHeaders = await headers();
-  const host = requestHeaders.get("x-forwarded-host") ?? requestHeaders.get("host") ?? "localhost";
-  const protocol = requestHeaders.get("x-forwarded-proto") ?? "https";
-  const siteUrl = new URL(`${protocol}://${host}`);
-  const title = "Jan Day Studio | Madison wedding rentals";
-  const description = "Thoughtful wedding rentals, Madison pickup, delivery, and product sourcing.";
+const productionHost = process.env.VERCEL_PROJECT_PRODUCTION_URL ?? process.env.VERCEL_URL;
+const siteUrl = productionHost ? new URL(`https://${productionHost}`) : new URL("http://localhost:3000");
+const title = "Jan Day Studio | Madison wedding rentals";
+const description = "Thoughtful wedding rentals, Madison pickup, delivery, and product sourcing.";
 
-  return {
-    metadataBase: siteUrl,
+export const metadata: Metadata = {
+  metadataBase: siteUrl,
+  title,
+  description,
+  openGraph: {
     title,
     description,
-    openGraph: {
-      title,
-      description,
-      type: "website",
-      images: [{ url: new URL("/og.png", siteUrl), width: 1200, height: 630, alt: "Jan Day Studio wedding rentals" }],
-    },
-    twitter: {
-      card: "summary_large_image",
-      title,
-      description,
-      images: [new URL("/og.png", siteUrl)],
-    },
-    icons: {
-      icon: "/brand/jan-day-mark.jpg",
-      apple: "/brand/jan-day-mark.jpg",
-    },
-  };
-}
+    type: "website",
+    images: [{ url: "/og.png", width: 1200, height: 630, alt: "Jan Day Studio wedding rentals" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title,
+    description,
+    images: ["/og.png"],
+  },
+  icons: {
+    icon: "/brand/jan-day-mark.jpg",
+    apple: "/brand/jan-day-mark.jpg",
+  },
+};
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
