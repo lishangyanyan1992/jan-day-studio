@@ -36,8 +36,8 @@ export default function Home() {
     <main>
       <section className="hero" id="top">
         <nav className="nav page-shell" aria-label="Main navigation">
-          <a className="brand" href="#top" aria-label="Jan Day home">
-            Jan Day
+          <a className="brand-logo" href="#top" aria-label="Jan Day Studio home">
+            <img src="/brand/jan-day-wordmark.png" alt="" />
           </a>
           <div className="nav-links">
             <a href="#collections">Rentals &amp; sourcing</a>
@@ -61,9 +61,12 @@ export default function Home() {
             </a>
           </div>
           <div className="hero-note" aria-label="Jan Day promise">
-            <span>Pick up in Madison.</span>
-            <i />
-            <span>Or let us bring it to you.</span>
+            <img src="/brand/jan-day-mark.jpg" alt="" />
+            <div>
+              <span>Pick up in Madison.</span>
+              <i />
+              <span>Or let us bring it to you.</span>
+            </div>
           </div>
         </div>
       </section>
@@ -142,7 +145,7 @@ export default function Home() {
       <section className="feature">
         <div className="feature-image" role="img" aria-label="An intimate garden wedding reception" />
         <div className="feature-copy">
-          <p className="eyebrow eyebrow--light">For celebrations that feel lived in</p>
+          <p className="eyebrow eyebrow--on-clay">For celebrations that feel lived in</p>
           <h2>Let&apos;s create<br />something beautiful.</h2>
           <p>
             Whether you are planning an intimate dinner or a full weekend celebration, we&apos;ll help you rent, source, and gather the pieces that carry the feeling through.
@@ -167,7 +170,9 @@ export default function Home() {
       </section>
 
       <footer className="footer page-shell">
-        <a className="brand" href="#top">Jan Day</a>
+        <a className="footer-logo" href="#top" aria-label="Jan Day Studio home">
+          <img src="/brand/jan-day-wordmark.png" alt="" />
+        </a>
         <p>Thoughtful rentals and sourcing for Madison gatherings.</p>
         <div className="footer-links">
           <a href="#collections">Rentals &amp; sourcing</a>

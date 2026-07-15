@@ -19,7 +19,9 @@ test("server-renders the Jan Day landing page", async () => {
   assert.match(response.headers.get("content-type") ?? "", /^text\/html\b/i);
 
   const html = await response.text();
-  assert.match(html, /<title>Jan Day \| Thoughtful wedding rentals<\/title>/i);
+  assert.match(html, /<title>Jan Day Studio \| Madison wedding rentals<\/title>/i);
+  assert.match(html, /\/brand\/jan-day-wordmark\.png/i);
+  assert.match(html, /\/brand\/jan-day-mark\.jpg/i);
   assert.match(html, /Every detail\.\s*<br[^>]*>\s*Beautifully considered\./i);
   assert.match(html, /Build your wishlist/i);
   assert.match(html, /Madison celebrations/i);
