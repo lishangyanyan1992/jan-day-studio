@@ -1,4 +1,5 @@
 import assert from "node:assert/strict";
+import { readFile } from "node:fs/promises";
 import test from "node:test";
 
 async function render() {
@@ -29,4 +30,16 @@ test("server-renders the Jan Day landing page", async () => {
   assert.match(html, /Let us source it/i);
   assert.match(html, /Tell us about\s*<br[^>]*>\s*your day\./i);
   assert.doesNotMatch(html, /codex-preview|react-loading-skeleton|Your site is taking shape/i);
+});
+
+test("brand guide is a standalone HTML document", async () => {
+  const html = await readFile(new URL("../public/brand-guide.html", import.meta.url), "utf8");
+
+  assert.match(html, /^<!doctype html>/i);
+  assert.match(html, /<title>Jan Day Studio Brand Guide<\/title>/i);
+  assert.match(html, /\/brand\/jan-day-wordmark\.png/i);
+  assert.match(html, /\/brand\/jan-day-mark\.jpg/i);
+  assert.match(html, /#b5876f/i);
+  assert.match(html, /Bodoni Moda/i);
+  assert.match(html, /Thoughtful rentals and sourcing for Madison gatherings/i);
 });

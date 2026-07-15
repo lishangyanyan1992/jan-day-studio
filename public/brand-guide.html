@@ -1,0 +1,1211 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="The visual identity and digital design system for Jan Day Studio."
+    />
+    <title>Jan Day Studio Brand Guide</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;6..96,500&amp;family=DM+Sans:wght@400;500;600&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" href="/brand/jan-day-mark.jpg" />
+    <style>
+      :root {
+        --brand-clay: #b5876f;
+        --clay-deep: #875d4a;
+        --clay-soft: #d7b9a8;
+        --ink: #271c18;
+        --walnut: #4a352d;
+        --canvas: #fbf7f2;
+        --ivory: #f2e8de;
+        --stone: #d8c8bc;
+        --sage: #858774;
+        --display: "Bodoni Moda", Georgia, serif;
+        --body: "DM Sans", Arial, sans-serif;
+        --content: min(1180px, calc(100% - 56px));
+      }
+
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+        background: var(--canvas);
+        color: var(--ink);
+        font-family: var(--body);
+        font-size: 16px;
+        line-height: 1.7;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      img {
+        display: block;
+        max-width: 100%;
+      }
+
+      a {
+        color: inherit;
+      }
+
+      a:focus-visible,
+      button:focus-visible,
+      input:focus-visible,
+      textarea:focus-visible {
+        outline: 2px solid var(--brand-clay);
+        outline-offset: 4px;
+      }
+
+      .skip-link {
+        position: fixed;
+        z-index: 100;
+        left: 18px;
+        top: 12px;
+        padding: 8px 14px;
+        background: var(--ink);
+        color: var(--canvas);
+        transform: translateY(-180%);
+      }
+
+      .skip-link:focus {
+        transform: translateY(0);
+      }
+
+      .site-header {
+        position: sticky;
+        z-index: 20;
+        top: 0;
+        border-bottom: 1px solid rgb(135 93 74 / 18%);
+        background: rgb(251 247 242 / 92%);
+        backdrop-filter: blur(12px);
+      }
+
+      .nav {
+        width: var(--content);
+        min-height: 76px;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 28px;
+      }
+
+      .nav-logo img {
+        width: 154px;
+        height: auto;
+      }
+
+      .nav-links {
+        display: flex;
+        align-items: center;
+        gap: clamp(16px, 2.8vw, 34px);
+        font-size: 0.7rem;
+        font-weight: 600;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+      }
+
+      .nav-links a {
+        text-decoration: none;
+      }
+
+      .nav-links a:hover {
+        color: var(--clay-deep);
+      }
+
+      .nav-links .view-site {
+        border-bottom: 1px solid currentColor;
+        padding: 4px 0;
+      }
+
+      .hero {
+        min-height: calc(100svh - 77px);
+        display: grid;
+        align-items: center;
+        padding: 80px 0 96px;
+        overflow: hidden;
+      }
+
+      .hero-inner {
+        width: var(--content);
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: minmax(0, 1.3fr) minmax(280px, 0.7fr);
+        align-items: center;
+        gap: clamp(48px, 8vw, 120px);
+      }
+
+      .eyebrow {
+        margin: 0 0 22px;
+        color: var(--clay-deep);
+        font-size: 0.68rem;
+        font-weight: 600;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+      }
+
+      .hero h1 {
+        max-width: 760px;
+        margin: 0;
+        font-family: var(--display);
+        font-size: clamp(4rem, 8vw, 7.8rem);
+        font-weight: 400;
+        letter-spacing: -0.045em;
+        line-height: 0.86;
+      }
+
+      .hero-intro {
+        max-width: 600px;
+        margin: 36px 0 0;
+        color: var(--walnut);
+        font-size: clamp(1rem, 1.3vw, 1.16rem);
+      }
+
+      .hero-mark {
+        position: relative;
+        min-height: 440px;
+        display: grid;
+        place-items: center;
+      }
+
+      .pebble {
+        position: absolute;
+        width: min(32vw, 390px);
+        aspect-ratio: 0.92;
+        background: var(--ivory);
+        border-radius: 57% 43% 49% 51% / 35% 55% 45% 65%;
+        transform: rotate(8deg);
+      }
+
+      .mark-frame {
+        position: relative;
+        width: min(20vw, 235px);
+        padding: 18px;
+        background: var(--canvas);
+        box-shadow: 0 22px 70px rgb(74 53 45 / 10%);
+        transform: rotate(-4deg);
+      }
+
+      .mark-note {
+        position: absolute;
+        right: 2%;
+        bottom: 12%;
+        width: 122px;
+        margin: 0;
+        padding-top: 10px;
+        border-top: 1px solid var(--clay-deep);
+        color: var(--clay-deep);
+        font-size: 0.68rem;
+        letter-spacing: 0.1em;
+        line-height: 1.45;
+        text-transform: uppercase;
+      }
+
+      .section {
+        padding: clamp(82px, 10vw, 148px) 0;
+      }
+
+      .section--ivory {
+        background: var(--ivory);
+      }
+
+      .section--ink {
+        background: var(--ink);
+        color: var(--canvas);
+      }
+
+      .section-inner {
+        width: var(--content);
+        margin: 0 auto;
+      }
+
+      .section-head {
+        display: grid;
+        grid-template-columns: minmax(220px, 0.55fr) minmax(0, 1fr);
+        gap: clamp(32px, 8vw, 110px);
+        align-items: start;
+        margin-bottom: clamp(54px, 7vw, 90px);
+      }
+
+      .section-number {
+        display: inline-flex;
+        align-items: center;
+        gap: 12px;
+        color: var(--clay-deep);
+        font-size: 0.68rem;
+        font-weight: 600;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+      }
+
+      .section-number::before {
+        width: 34px;
+        height: 1px;
+        background: currentColor;
+        content: "";
+      }
+
+      .section--ink .section-number {
+        color: var(--clay-soft);
+      }
+
+      .section h2 {
+        margin: 0;
+        font-family: var(--display);
+        font-size: clamp(3rem, 5vw, 5.6rem);
+        font-weight: 400;
+        letter-spacing: -0.04em;
+        line-height: 0.92;
+      }
+
+      .section-lede {
+        max-width: 680px;
+        margin: 26px 0 0;
+        color: var(--walnut);
+      }
+
+      .section--ink .section-lede {
+        color: var(--stone);
+      }
+
+      .principles {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        border-top: 1px solid var(--stone);
+      }
+
+      .principle {
+        min-height: 260px;
+        padding: 28px 24px 28px 0;
+        border-right: 1px solid var(--stone);
+      }
+
+      .principle:not(:first-child) {
+        padding-left: 24px;
+      }
+
+      .principle:last-child {
+        border-right: 0;
+      }
+
+      .principle span {
+        color: var(--clay-deep);
+        font-family: var(--display);
+        font-size: 1.2rem;
+      }
+
+      .principle h3 {
+        margin: 56px 0 14px;
+        font-family: var(--display);
+        font-size: 1.55rem;
+        font-weight: 400;
+        line-height: 1.05;
+      }
+
+      .principle p {
+        margin: 0;
+        color: var(--walnut);
+        font-size: 0.82rem;
+        line-height: 1.55;
+      }
+
+      .logo-grid {
+        display: grid;
+        grid-template-columns: 1.45fr 0.75fr;
+        gap: 28px;
+      }
+
+      .logo-card {
+        min-height: 440px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: clamp(28px, 4vw, 52px);
+        background: var(--canvas);
+        color: var(--ink);
+      }
+
+      .logo-card--dark {
+        background: var(--walnut);
+        color: var(--canvas);
+      }
+
+      .logo-card .wordmark {
+        width: min(100%, 450px);
+        margin: auto;
+      }
+
+      .logo-card .monogram {
+        width: min(100%, 220px);
+        margin: auto;
+      }
+
+      .asset-caption {
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+        padding-top: 20px;
+        border-top: 1px solid currentColor;
+        font-size: 0.68rem;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        opacity: 0.75;
+      }
+
+      .logo-rules {
+        margin-top: 28px;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1px;
+        background: var(--stone);
+        border: 1px solid var(--stone);
+      }
+
+      .rule {
+        padding: 26px;
+        background: var(--canvas);
+      }
+
+      .rule h3 {
+        margin: 0 0 10px;
+        font-family: var(--display);
+        font-size: 1.45rem;
+        font-weight: 400;
+      }
+
+      .rule p {
+        margin: 0;
+        color: var(--walnut);
+        font-size: 0.84rem;
+      }
+
+      .swatches {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 12px;
+      }
+
+      .swatch {
+        min-height: 232px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        padding: 18px;
+        color: var(--ink);
+      }
+
+      .swatch--dark {
+        color: var(--canvas);
+      }
+
+      .swatch strong,
+      .swatch span {
+        font-size: 0.72rem;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      .swatch span {
+        opacity: 0.72;
+      }
+
+      .swatch--clay { background: #b5876f; }
+      .swatch--deep { background: #875d4a; }
+      .swatch--soft { background: #d7b9a8; }
+      .swatch--ink { background: #271c18; }
+      .swatch--walnut { background: #4a352d; }
+      .swatch--canvas { background: #fbf7f2; border: 1px solid var(--stone); }
+      .swatch--ivory { background: #f2e8de; }
+      .swatch--stone { background: #d8c8bc; }
+      .swatch--sage { background: #858774; }
+
+      .color-note {
+        max-width: 740px;
+        margin: 34px 0 0 auto;
+        padding-left: 22px;
+        border-left: 1px solid var(--clay-deep);
+        color: var(--walnut);
+        font-size: 0.9rem;
+      }
+
+      .type-specimen {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: clamp(50px, 8vw, 120px);
+      }
+
+      .type-label {
+        display: flex;
+        justify-content: space-between;
+        gap: 18px;
+        margin-bottom: 38px;
+        padding-bottom: 12px;
+        border-bottom: 1px solid rgb(216 200 188 / 45%);
+        color: var(--clay-soft);
+        font-size: 0.68rem;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+      }
+
+      .display-sample {
+        margin: 0;
+        font-family: var(--display);
+        font-size: clamp(3.6rem, 7vw, 7rem);
+        font-weight: 400;
+        letter-spacing: -0.045em;
+        line-height: 0.84;
+      }
+
+      .alphabet {
+        margin: 38px 0 0;
+        color: var(--stone);
+        font-family: var(--display);
+        font-size: 1.55rem;
+        line-height: 1.4;
+      }
+
+      .body-sample {
+        max-width: 510px;
+        margin: 0;
+        color: var(--stone);
+        font-size: 1.05rem;
+      }
+
+      .interface-samples {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 22px;
+        margin-top: 52px;
+      }
+
+      .interface-samples p {
+        margin: 0;
+      }
+
+      .mini-eyebrow,
+      .mini-button {
+        font-size: 0.68rem;
+        font-weight: 600;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+      }
+
+      .component-grid {
+        display: grid;
+        grid-template-columns: 0.85fr 1.15fr;
+        gap: clamp(44px, 8vw, 110px);
+        align-items: start;
+      }
+
+      .component-title {
+        margin: 0 0 26px;
+        font-family: var(--display);
+        font-size: 2.2rem;
+        font-weight: 400;
+      }
+
+      .button-stack {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+      }
+
+      .button {
+        min-height: 48px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0 24px;
+        border: 1px solid transparent;
+        border-radius: 3px;
+        font: 600 0.68rem/1 var(--body);
+        letter-spacing: 0.1em;
+        text-decoration: none;
+        text-transform: uppercase;
+        transition: transform 160ms ease, background-color 160ms ease;
+      }
+
+      .button:hover {
+        transform: translateY(-2px);
+      }
+
+      .button--primary {
+        background: var(--brand-clay);
+        color: var(--ink);
+      }
+
+      .button--secondary {
+        border-color: var(--stone);
+        background: var(--canvas);
+        color: var(--ink);
+      }
+
+      .button--dark {
+        background: var(--ink);
+        color: var(--canvas);
+      }
+
+      .sample-card {
+        margin-top: 52px;
+        padding-top: 22px;
+        border-top: 1px solid var(--stone);
+      }
+
+      .sample-card .card-image {
+        aspect-ratio: 4 / 3;
+        display: grid;
+        place-items: center;
+        overflow: hidden;
+        background: var(--ivory);
+        border-radius: 48% 48% 2px 2px / 28% 28% 2px 2px;
+      }
+
+      .sample-card .card-image img {
+        width: 114px;
+      }
+
+      .sample-card h4 {
+        margin: 18px 0 4px;
+        font-family: var(--display);
+        font-size: 1.8rem;
+        font-weight: 400;
+        line-height: 1;
+      }
+
+      .sample-card p {
+        margin: 0;
+        color: var(--walnut);
+        font-size: 0.84rem;
+      }
+
+      .form-sample {
+        padding: clamp(28px, 4vw, 52px);
+        background: var(--ivory);
+      }
+
+      .field {
+        margin-bottom: 28px;
+      }
+
+      .field label {
+        display: block;
+        margin-bottom: 7px;
+        color: var(--clay-deep);
+        font-size: 0.66rem;
+        font-weight: 600;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+      }
+
+      .field input,
+      .field textarea {
+        width: 100%;
+        padding: 10px 0;
+        border: 0;
+        border-bottom: 1px solid var(--stone);
+        border-radius: 0;
+        outline: 0;
+        background: transparent;
+        color: var(--ink);
+        font: inherit;
+      }
+
+      .field textarea {
+        min-height: 82px;
+        resize: vertical;
+      }
+
+      .field input:focus,
+      .field textarea:focus {
+        border-bottom-color: var(--brand-clay);
+        outline: 2px solid var(--brand-clay);
+        outline-offset: 4px;
+      }
+
+      .voice-grid {
+        display: grid;
+        grid-template-columns: 1.05fr 0.95fr;
+        gap: clamp(52px, 9vw, 130px);
+      }
+
+      .core-message {
+        margin: 0;
+        font-family: var(--display);
+        font-size: clamp(3.2rem, 6vw, 6.6rem);
+        font-weight: 400;
+        letter-spacing: -0.045em;
+        line-height: 0.9;
+      }
+
+      .voice-note {
+        align-self: end;
+      }
+
+      .voice-note > p {
+        max-width: 430px;
+        margin: 0 0 34px;
+        color: var(--stone);
+      }
+
+      .word-lists {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 28px;
+      }
+
+      .word-list {
+        padding-top: 16px;
+        border-top: 1px solid rgb(216 200 188 / 40%);
+      }
+
+      .word-list h3 {
+        margin: 0 0 12px;
+        color: var(--clay-soft);
+        font-size: 0.68rem;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+      }
+
+      .word-list p {
+        margin: 0;
+        color: var(--stone);
+        font-size: 0.88rem;
+      }
+
+      .do-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 28px;
+      }
+
+      .do-card {
+        padding: clamp(28px, 4vw, 48px);
+        border-top: 3px solid var(--sage);
+        background: var(--ivory);
+      }
+
+      .do-card--not {
+        border-top-color: var(--clay-deep);
+        background: var(--canvas);
+        box-shadow: inset 0 0 0 1px var(--stone);
+      }
+
+      .do-card h3 {
+        margin: 0 0 28px;
+        font-family: var(--display);
+        font-size: 2.4rem;
+        font-weight: 400;
+      }
+
+      .do-card ul {
+        margin: 0;
+        padding-left: 1.15em;
+        color: var(--walnut);
+      }
+
+      .do-card li + li {
+        margin-top: 12px;
+      }
+
+      .accessibility {
+        margin-top: 28px;
+        padding: 28px;
+        display: grid;
+        grid-template-columns: 0.6fr 1.4fr;
+        gap: 30px;
+        background: var(--brand-clay);
+        color: var(--ink);
+      }
+
+      .accessibility h3 {
+        margin: 0;
+        font-family: var(--display);
+        font-size: 2rem;
+        font-weight: 400;
+      }
+
+      .accessibility p {
+        margin: 0;
+      }
+
+      footer {
+        padding: 68px 0 34px;
+        background: var(--ink);
+        color: var(--canvas);
+      }
+
+      .footer-inner {
+        width: var(--content);
+        margin: 0 auto;
+      }
+
+      .footer-inner img {
+        width: min(360px, 72vw);
+        margin-bottom: 66px;
+        filter: brightness(0) invert(1);
+      }
+
+      .footer-meta {
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+        padding-top: 20px;
+        border-top: 1px solid rgb(216 200 188 / 32%);
+        color: var(--stone);
+        font-size: 0.68rem;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+      }
+
+      @media (max-width: 900px) {
+        .hero-inner,
+        .section-head,
+        .type-specimen,
+        .component-grid,
+        .voice-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .hero-mark {
+          min-height: 370px;
+        }
+
+        .pebble {
+          width: 330px;
+        }
+
+        .mark-frame {
+          width: 205px;
+        }
+
+        .principles {
+          grid-template-columns: repeat(2, 1fr);
+        }
+
+        .principle:nth-child(2) {
+          border-right: 0;
+        }
+
+        .principle:nth-child(n + 3) {
+          border-top: 1px solid var(--stone);
+        }
+
+        .logo-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .swatches {
+          grid-template-columns: repeat(3, 1fr);
+        }
+
+        .swatch {
+          min-height: 190px;
+        }
+      }
+
+      @media (max-width: 620px) {
+        :root {
+          --content: calc(100% - 36px);
+        }
+
+        .nav {
+          min-height: 68px;
+        }
+
+        .nav-logo img {
+          width: 128px;
+        }
+
+        .nav-links a:not(.view-site) {
+          display: none;
+        }
+
+        .hero {
+          padding-top: 64px;
+        }
+
+        .hero h1 {
+          font-size: clamp(3.65rem, 19vw, 5.3rem);
+        }
+
+        .hero-mark {
+          min-height: 320px;
+        }
+
+        .pebble {
+          width: 280px;
+        }
+
+        .mark-note {
+          right: 0;
+          bottom: 3%;
+        }
+
+        .principles,
+        .logo-rules,
+        .swatches,
+        .interface-samples,
+        .word-lists,
+        .do-grid,
+        .accessibility {
+          grid-template-columns: 1fr;
+        }
+
+        .principle,
+        .principle:not(:first-child) {
+          min-height: auto;
+          padding: 26px 0;
+          border-right: 0;
+          border-top: 1px solid var(--stone);
+        }
+
+        .principle h3 {
+          margin-top: 24px;
+        }
+
+        .logo-card {
+          min-height: 340px;
+        }
+
+        .swatch {
+          min-height: 150px;
+        }
+
+        .footer-meta {
+          flex-direction: column;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        html {
+          scroll-behavior: auto;
+        }
+
+        *,
+        *::before,
+        *::after {
+          scroll-behavior: auto !important;
+          transition-duration: 0.01ms !important;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
+      <nav class="nav" aria-label="Brand guide navigation">
+        <a class="nav-logo" href="#top" aria-label="Jan Day Studio brand guide home">
+          <img src="/brand/jan-day-wordmark.png" alt="Jan Day Studio" />
+        </a>
+        <div class="nav-links">
+          <a href="#identity">Identity</a>
+          <a href="#color">Color</a>
+          <a href="#type">Type</a>
+          <a class="view-site" href="/">View website</a>
+        </div>
+      </nav>
+    </header>
+
+    <main id="main">
+      <section class="hero" id="top">
+        <div class="hero-inner">
+          <div>
+            <p class="eyebrow">Brand system · Version 1.0</p>
+            <h1>Warm. Artful.<br />Unhurried.</h1>
+            <p class="hero-intro">
+              A visual and verbal foundation for Jan Day Studio—thoughtful wedding
+              rentals and product sourcing for gatherings in the Madison area.
+            </p>
+          </div>
+          <div class="hero-mark" aria-label="Jan Day monogram presentation">
+            <div class="pebble" aria-hidden="true"></div>
+            <div class="mark-frame">
+              <img src="/brand/jan-day-mark.jpg" alt="Jan Day JD pebble monogram" />
+            </div>
+            <p class="mark-note">The pebble inspires our organic shape language.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section--ivory" id="foundation">
+        <div class="section-inner">
+          <header class="section-head">
+            <span class="section-number">01 · Foundation</span>
+            <div>
+              <h2>Considered,<br />never precious.</h2>
+              <p class="section-lede">
+                The brand pairs editorial restraint with local warmth. It should feel
+                special enough for a wedding and relaxed enough for a Madison pickup.
+              </p>
+            </div>
+          </header>
+          <div class="principles">
+            <article class="principle">
+              <span>01</span>
+              <h3>Considered,<br />not precious</h3>
+              <p>Refined typography and space without exclusivity or formality.</p>
+            </article>
+            <article class="principle">
+              <span>02</span>
+              <h3>Organic,<br />not rustic</h3>
+              <p>Soft asymmetry without farmhouse clichés or excess ornament.</p>
+            </article>
+            <article class="principle">
+              <span>03</span>
+              <h3>Warm,<br />not sugary</h3>
+              <p>Clay, cream, walnut, and muted natural tones over bright blush.</p>
+            </article>
+            <article class="principle">
+              <span>04</span>
+              <h3>Editorial,<br />not ornamental</h3>
+              <p>Photography, type, and negative space carry the composition.</p>
+            </article>
+            <article class="principle">
+              <span>05</span>
+              <h3>Clear,<br />not salesy</h3>
+              <p>Plain language, concrete choices, and one obvious next step.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="identity">
+        <div class="section-inner">
+          <header class="section-head">
+            <span class="section-number">02 · Identity</span>
+            <div>
+              <h2>The marks.</h2>
+              <p class="section-lede">
+                The supplied logo artwork is always the source of truth. Keep its
+                proportions, color, and letterforms intact.
+              </p>
+            </div>
+          </header>
+          <div class="logo-grid">
+            <div class="logo-card">
+              <img class="wordmark" src="/brand/jan-day-wordmark.png" alt="Jan Day Studio wordmark" />
+              <div class="asset-caption"><span>Primary wordmark</span><span>Min. 120 px</span></div>
+            </div>
+            <div class="logo-card logo-card--dark">
+              <img class="monogram" src="/brand/jan-day-mark.jpg" alt="Jan Day JD monogram" />
+              <div class="asset-caption"><span>Secondary mark</span><span>Min. 32 px</span></div>
+            </div>
+          </div>
+          <div class="logo-rules">
+            <article class="rule">
+              <h3>Give it room</h3>
+              <p>Keep at least the height of the lowercase “a” clear on every side.</p>
+            </article>
+            <article class="rule">
+              <h3>Use the artwork</h3>
+              <p>Never typeset, redraw, stretch, outline, shadow, or crop the logo.</p>
+            </article>
+            <article class="rule">
+              <h3>Choose contrast</h3>
+              <p>Place it on Canvas, Ivory, Ink, or calm imagery with strong contrast.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section--ivory" id="color">
+        <div class="section-inner">
+          <header class="section-head">
+            <span class="section-number">03 · Color</span>
+            <div>
+              <h2>Warmth,<br />in balance.</h2>
+              <p class="section-lede">
+                Brand Clay is sampled directly from the logo. Quiet neutrals give it
+                room to be memorable, while Sage adds a restrained natural note.
+              </p>
+            </div>
+          </header>
+          <div class="swatches" aria-label="Primary brand colors">
+            <div class="swatch swatch--clay"><strong>Brand Clay</strong><span>#B5876F</span></div>
+            <div class="swatch swatch--deep swatch--dark"><strong>Clay Deep</strong><span>#875D4A</span></div>
+            <div class="swatch swatch--soft"><strong>Clay Soft</strong><span>#D7B9A8</span></div>
+            <div class="swatch swatch--ink swatch--dark"><strong>Ink</strong><span>#271C18</span></div>
+            <div class="swatch swatch--walnut swatch--dark"><strong>Walnut</strong><span>#4A352D</span></div>
+            <div class="swatch swatch--canvas"><strong>Canvas</strong><span>#FBF7F2</span></div>
+            <div class="swatch swatch--ivory"><strong>Ivory</strong><span>#F2E8DE</span></div>
+            <div class="swatch swatch--stone"><strong>Stone</strong><span>#D8C8BC</span></div>
+            <div class="swatch swatch--sage"><strong>Sage</strong><span>#858774</span></div>
+          </div>
+          <p class="color-note">
+            Use Ink—not white—for text on Brand Clay. Clay Deep is the accessible
+            choice for small text on light surfaces. Keep Sage below 10% of a composition.
+          </p>
+        </div>
+      </section>
+
+      <section class="section section--ink" id="type">
+        <div class="section-inner">
+          <header class="section-head">
+            <span class="section-number">04 · Typography</span>
+            <div>
+              <h2>Editorial soul.<br />Practical voice.</h2>
+              <p class="section-lede">
+                Bodoni Moda brings ceremony and contrast. DM Sans keeps every detail,
+                policy, and next step easy to understand.
+              </p>
+            </div>
+          </header>
+          <div class="type-specimen">
+            <div>
+              <div class="type-label"><span>Display</span><span>Bodoni Moda · 400 / 500</span></div>
+              <p class="display-sample">Every detail, beautifully considered.</p>
+              <p class="alphabet">Aa Bb Cc Dd Ee Ff Gg<br />0123456789 &amp; ?!</p>
+            </div>
+            <div>
+              <div class="type-label"><span>Body + UI</span><span>DM Sans · 400 / 500 / 600</span></div>
+              <p class="body-sample">
+                From tabletop pieces to finishing touches, we help you gather what
+                feels right for your day. Pick up in Madison, ask about delivery, or
+                let us source something you haven't found yet.
+              </p>
+              <div class="interface-samples">
+                <div><p class="mini-eyebrow">Madison, Wisconsin</p><p>Eyebrow · 11 / 600</p></div>
+                <div><p class="mini-button">Build your wishlist</p><p>Button · 11 / 600</p></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="components">
+        <div class="section-inner">
+          <header class="section-head">
+            <span class="section-number">05 · Components</span>
+            <div>
+              <h2>Useful can still<br />feel beautiful.</h2>
+              <p class="section-lede">
+                Functional elements stay quiet, tactile, and direct. Small details do
+                the work—thin rules, clear labels, modest motion, generous spacing.
+              </p>
+            </div>
+          </header>
+          <div class="component-grid">
+            <div>
+              <h3 class="component-title">Buttons</h3>
+              <div class="button-stack">
+                <a class="button button--primary" href="#components">Build your wishlist</a>
+                <a class="button button--secondary" href="#components">Explore collection</a>
+                <a class="button button--dark" href="#components">Ask us to source it</a>
+              </div>
+              <article class="sample-card">
+                <div class="card-image">
+                  <img src="/brand/jan-day-mark.jpg" alt="" />
+                </div>
+                <h4>Tabletop details</h4>
+                <p>Warm, useful pieces for a gathered table.</p>
+              </article>
+            </div>
+            <form class="form-sample" aria-label="Example inquiry form">
+              <h3 class="component-title">Form fields</h3>
+              <div class="field">
+                <label for="example-name">Your name</label>
+                <input id="example-name" name="example-name" type="text" placeholder="First and last name" />
+              </div>
+              <div class="field">
+                <label for="example-date">Event date</label>
+                <input id="example-date" name="example-date" type="text" placeholder="Month / day / year" />
+              </div>
+              <div class="field">
+                <label for="example-note">What are you looking for?</label>
+                <textarea id="example-note" name="example-note" placeholder="Tell us what would make your gathering feel like yours."></textarea>
+              </div>
+              <button class="button button--primary" type="button">Tell us about your day</button>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section--ink" id="voice">
+        <div class="section-inner">
+          <header class="section-head">
+            <span class="section-number">06 · Voice</span>
+            <div>
+              <h2>Thoughtful,<br />local, calm.</h2>
+            </div>
+          </header>
+          <div class="voice-grid">
+            <p class="core-message">Thoughtful rentals and sourcing for Madison gatherings.</p>
+            <div class="voice-note">
+              <p>
+                Jan Day sounds like a creative partner who knows the details and makes
+                them feel manageable. Pair poetic headlines with useful, specific copy.
+              </p>
+              <div class="word-lists">
+                <div class="word-list">
+                  <h3>Use</h3>
+                  <p>Your day · pieces · gather · pick up · we'll help</p>
+                </div>
+                <div class="word-list">
+                  <h3>Avoid</h3>
+                  <p>Perfect · dream wedding · magical · one-stop shop · urgency</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="guidance">
+        <div class="section-inner">
+          <header class="section-head">
+            <span class="section-number">07 · Guidance</span>
+            <div>
+              <h2>Keep it<br />recognizably Jan Day.</h2>
+            </div>
+          </header>
+          <div class="do-grid">
+            <article class="do-card">
+              <h3>Do</h3>
+              <ul>
+                <li>Use the supplied logo artwork unchanged.</li>
+                <li>Let clay, typography, and negative space build recognition.</li>
+                <li>Make pickup, delivery, and sourcing easy to find.</li>
+                <li>Show warm, natural, lived-in photography.</li>
+              </ul>
+            </article>
+            <article class="do-card do-card--not">
+              <h3>Do not</h3>
+              <ul>
+                <li>Recreate the logo with live type.</li>
+                <li>Add gold gradients, scripts, florals, or drop shadows.</li>
+                <li>Use bright blush pink as the dominant color.</li>
+                <li>Round every card or bury useful information.</li>
+              </ul>
+            </article>
+          </div>
+          <aside class="accessibility">
+            <h3>Accessibility is part of the brand.</h3>
+            <p>
+              Meet WCAG AA contrast, keep visible keyboard focus, preserve semantic
+              headings and labels, maintain 44 px touch targets, and respect reduced-motion preferences.
+            </p>
+          </aside>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="footer-inner">
+        <img src="/brand/jan-day-wordmark.png" alt="Jan Day Studio" />
+        <div class="footer-meta"><span>Brand guide · Version 1.0</span><span>Madison, Wisconsin · July 2026</span></div>
+      </div>
+    </footer>
+  </body>
+</html>
