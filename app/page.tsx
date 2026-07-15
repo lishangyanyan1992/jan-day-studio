@@ -41,7 +41,7 @@ export default function Home() {
           </a>
           <div className="nav-links">
             <a href="#collections">Rentals &amp; sourcing</a>
-            <a href="#our-story">Our approach</a>
+            <a href="/about">About us</a>
             <a href="#inquire">Contact</a>
           </div>
           <a className="button button--small" href="#inquire">
@@ -79,7 +79,7 @@ export default function Home() {
             <p>
               Jan Day brings softly layered furnishings and tabletop pieces to Madison-area celebrations with a point of view. Rent from our collection, pick up by appointment, or ask us to source the pieces you have been looking for.
             </p>
-            <a className="text-link" href="#inquire">Meet Jan Day <span aria-hidden="true">↗</span></a>
+            <a className="text-link" href="/about">Meet Yanyan &amp; Jen <span aria-hidden="true">↗</span></a>
           </div>
         </div>
       </section>
@@ -176,7 +176,7 @@ export default function Home() {
         <p>Thoughtful rentals and sourcing for Madison gatherings.</p>
         <div className="footer-links">
           <a href="#collections">Rentals &amp; sourcing</a>
-          <a href="#our-story">Our approach</a>
+          <a href="/about">About us</a>
           <a href="#inquire">Inquire</a>
         </div>
       </footer>
