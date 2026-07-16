@@ -43,5 +43,14 @@ used by the site's social sharing metadata.
 - HTML brand guide: `public/brand-guide.html`
 - Logo artwork: `public/brand/`
 
-The inquiry form opens a pre-filled email to `hello@jandayrentals.com`; it does
-not require a database or third-party form service.
+The inquiry form opens a pre-filled email to `hello@jandayrentals.com`.
+
+## Inventory administration
+
+The protected inventory and reservation dashboard lives at `/admin`. It uses
+Supabase for PostgreSQL storage and staff authentication. Until Supabase is
+configured, the public site continues to work and `/admin` displays setup
+instructions.
+
+See [`docs/INVENTORY_SETUP.md`](docs/INVENTORY_SETUP.md) for the database,
+staff-account, and Vercel setup steps.
