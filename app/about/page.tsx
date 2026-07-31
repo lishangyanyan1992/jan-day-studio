@@ -5,7 +5,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "About us | Jan Day Studio",
   description:
-    "Meet Yanyan and Jen, the newlyweds behind Jan Day Studio, and learn why they are making beautiful, customizable wedding pieces more accessible.",
+    "Meet Yanyan and Jen, the newlyweds behind Jan Day Studio, and learn why they help Madison couples source high-quality faux wedding flowers overseas.",
 };
 
 const principles = [
@@ -13,19 +13,19 @@ const principles = [
     number: "01",
     title: "Personal by design",
     description:
-      "Your wedding should feel like the two of you. We make room for color, details, and thoughtful customization—not one-size-fits-all choices.",
+      "Your flowers should feel like the two of you. We make room for color, texture, and thoughtful combinations—not one-size-fits-all packages.",
   },
   {
     number: "02",
-    title: "Fairly priced",
+    title: "Clear before you buy",
     description:
-      "We source carefully, operate efficiently, and keep unnecessary markups out of the way so more of your budget can go toward the day itself.",
+      "You see the product details, quantities, timing, and landed quote before approving an overseas order.",
   },
   {
     number: "03",
-    title: "Made with empathy",
+    title: "Managed with care",
     description:
-      "We have planned a wedding, compared the options, and felt the sticker shock. We are building the experience we wished we had.",
+      "We compare suppliers, confirm the order, follow the freight, inspect what arrives, and make pickup straightforward.",
   },
 ];
 
@@ -37,12 +37,12 @@ export default function About() {
           <Image src="/brand/jan-day-wordmark.png" alt="" width={682} height={230} />
         </Link>
         <div className="nav-links">
-          <Link href="/#collections">Rentals &amp; sourcing</Link>
+          <Link href="/#collections">Faux flowers</Link>
           <Link href="/about" aria-current="page">About us</Link>
           <Link href="/#inquire">Contact</Link>
         </div>
         <Link className="button button--small" href="/#inquire">
-          Build your wishlist <span aria-hidden="true">→</span>
+          Start a sourcing request <span aria-hidden="true">→</span>
         </Link>
       </nav>
 
@@ -51,7 +51,7 @@ export default function About() {
           <p className="eyebrow">Our story</p>
           <h1>It started with<br />our own wedding.</h1>
           <p className="about-hero-intro">
-            We&apos;re Yanyan and Jen—the newlyweds behind Jan Day Studio. We started this business to make beautifully designed wedding pieces feel more personal, more accessible, and much less overwhelming.
+            We&apos;re Yanyan and Jen—the newlyweds behind Jan Day Studio. We started this business to help couples buy beautifully designed faux wedding flowers without navigating overseas sourcing alone.
           </p>
         </div>
         <figure className="about-photo">
@@ -74,13 +74,13 @@ export default function About() {
         </div>
         <div className="founder-story-copy">
           <p className="story-lead">
-            When we planned our wedding, we wanted it to feel thoughtful, beautiful, and unmistakably ours. But the options often felt limited: meaningful customization came with a steep price, and even simple details could quickly stretch the budget.
+            When we planned our wedding, we wanted the flowers to feel thoughtful, beautiful, and unmistakably ours. Fresh florals added up quickly, while buying directly overseas meant unfamiliar suppliers, uncertain quality, freight, and a long list of details to get right.
           </p>
           <p>
-            With backgrounds in design and building efficient startups, we knew there could be a more considered way. Jan Day brings those two worlds together—good design, smarter sourcing, and a leaner way of working—to offer wedding pieces you can make your own without the traditional wedding markup.
+            With backgrounds in design and building efficient startups, we knew there could be a more considered way. Jan Day brings those two worlds together—good design, practical research, and direct overseas sourcing—to make high-quality faux florals more accessible without the traditional wedding markup.
           </p>
           <p>
-            We&apos;re building the kind of place we wished we had while planning: one where couples can find products they love, personalize the details, and feel confident about what they&apos;re spending.
+            We&apos;re building the kind of sourcing partner we wished we had while planning: one where couples can bring a reference photo, compare real product options, understand the full cost, and pick up their own flowers locally when the order arrives.
           </p>
           <blockquote>
             Your wedding should reflect the people at the center of it—not the size of their budget.
@@ -113,10 +113,10 @@ export default function About() {
         </div>
         <div className="about-cta-copy">
           <p>
-            Tell us what you&apos;re imagining—or send the reference photo you can&apos;t stop thinking about. We&apos;ll help you find a thoughtful, fairly priced way to bring it to life.
+            Send the floral reference photo you can&apos;t stop thinking about. We&apos;ll help turn it into practical specifications, source promising options overseas, and give you a clear path to ordering your own flowers.
           </p>
           <Link className="button button--dark" href="/#inquire">
-            Build your wishlist <span aria-hidden="true">→</span>
+            Start a sourcing request <span aria-hidden="true">→</span>
           </Link>
         </div>
       </section>
@@ -125,9 +125,9 @@ export default function About() {
         <Link className="footer-logo" href="/" aria-label="Jan Day Studio home">
           <Image src="/brand/jan-day-wordmark.png" alt="" width={682} height={230} />
         </Link>
-        <p>Thoughtful rentals and sourcing for Madison gatherings.</p>
+        <p>High-quality faux florals, sourced overseas and picked up in Madison.</p>
         <div className="footer-links">
-          <Link href="/#collections">Rentals &amp; sourcing</Link>
+          <Link href="/#collections">Faux flowers</Link>
           <Link href="/about" aria-current="page">About us</Link>
           <Link href="/#inquire">Inquire</Link>
         </div>

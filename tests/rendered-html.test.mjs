@@ -8,17 +8,24 @@ test("the Jan Day landing page keeps its core content", async () => {
     readFile(new URL("../app/layout.tsx", import.meta.url), "utf8"),
   ]);
 
-  assert.match(layout, /Jan Day Studio \| Madison wedding rentals/i);
+  assert.match(layout, /Jan Day Studio \| Faux flower sourcing in Madison/i);
   assert.match(layout, /VERCEL_PROJECT_PRODUCTION_URL/i);
   assert.match(page, /\/brand\/jan-day-wordmark\.png/i);
-  assert.match(page, /\/brand\/jan-day-mark\.jpg/i);
-  assert.match(page, /Every detail\./i);
-  assert.match(page, /Beautifully considered\./i);
-  assert.match(page, /Build your wishlist/i);
-  assert.match(page, /Madison celebrations/i);
+  assert.match(page, /\/og-faux-florals\.png/i);
+  assert.match(page, /Blush and ivory faux roses/i);
+  assert.match(page, /The flowers you want/i);
+  assert.match(page, /Without the traditional markup/i);
+  assert.match(page, /Start a sourcing request/i);
+  assert.match(page, /Faux flowers, sourced for Madison weddings/i);
+  assert.match(page, /vetted makers in China/i);
   assert.match(page, /Pick up in Madison/i);
-  assert.match(page, /Let us source it/i);
-  assert.match(page, /Tell us about/i);
+  assert.match(page, /Ask us to source this/i);
+  assert.match(page, /Personal flowers/i);
+  assert.match(page, /Ceremony florals/i);
+  assert.match(page, /Reception florals/i);
+  assert.match(page, /Statement florals/i);
+  assert.match(page, /Loose stems & DIY/i);
+  assert.match(page, /Show us what/i);
   assert.doesNotMatch(page, /codex-preview|react-loading-skeleton|Your site is taking shape/i);
 });
 
@@ -31,7 +38,7 @@ test("brand guide is a standalone HTML document", async () => {
   assert.match(html, /\/brand\/jan-day-mark\.jpg/i);
   assert.match(html, /#b5876f/i);
   assert.match(html, /Bodoni Moda/i);
-  assert.match(html, /Thoughtful rentals and sourcing for Madison gatherings/i);
+  assert.match(html, /High-quality faux florals, sourced overseas and picked up in Madison/i);
 });
 
 test("the about page tells the founders' story and is linked from home", async () => {

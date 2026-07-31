@@ -2,33 +2,52 @@ import { InquiryForm } from "./InquiryForm";
 
 const collections = [
   {
-    number: "01",
-    title: "Tabletop",
-    description: "Linens, glassware, candles, and thoughtful details for a table worth lingering over.",
+    title: "Personal flowers",
+    description: "Real-touch bouquets and wearable flowers made for close-up moments and portraits.",
+    items: "Bridal bouquets · bridesmaid bouquets · boutonnieres · corsages · flower crowns",
     image:
-      "https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=900&q=85",
+      "https://images.unsplash.com/photo-1487530811176-3780de880c2d?auto=format&fit=crop&w=1000&q=85",
+    alt: "Wedding bouquet with ivory, peach, and plum flowers",
   },
   {
-    number: "02",
-    title: "Ceremony",
-    description: "Arches, aisles, and focal pieces that make the first moment feel unmistakably yours.",
+    title: "Ceremony florals",
+    description: "Layered silk flowers that frame the vows without asking fresh stems to survive the day.",
+    items: "Floral arches · meadow arrangements · altar flowers · aisle markers · petals",
     image:
-      "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=900&q=85",
+      "https://images.unsplash.com/photo-1639986098217-17112e22f1ed?auto=format&fit=crop&w=1000&q=85",
+    alt: "A floral designer arranging a flower-covered ceremony arch",
   },
   {
-    number: "03",
-    title: "Lounge",
-    description: "Comfortable gathering spaces layered with soft seating, texture, and beautiful light.",
+    title: "Reception florals",
+    description: "Flexible arrangements that can move from cocktail hour to dinner and still look considered.",
+    items: "Centerpieces · bud-vase clusters · garlands · sweetheart swags · cake flowers",
     image:
-      "https://images.unsplash.com/photo-1618220179428-22790b461013?auto=format&fit=crop&w=900&q=85",
+      "https://images.unsplash.com/photo-1749731894025-5eddb6b6efd8?auto=format&fit=crop&w=1000&q=85",
+    alt: "Warm wedding reception table with small floral arrangements",
+  },
+  {
+    title: "Statement florals",
+    description: "Large-scale flower moments for the spaces guests remember and the photographs they keep.",
+    items: "Flower walls · hanging installations · floral chandeliers · moon gates",
+    image:
+      "https://images.unsplash.com/photo-1705738482683-a8e583a976f7?auto=format&fit=crop&w=1100&q=85",
+    alt: "Hanging floral installation with greenery and small flowers",
+  },
+  {
+    title: "Loose stems & DIY",
+    description: "Mix-and-match stems and flower-bar quantities for couples who want to arrange their own.",
+    items: "Roses · peonies · hydrangeas · eucalyptus · baby’s breath · flower-bar kits",
+    image:
+      "https://images.unsplash.com/photo-1641871152478-80ee3d5e2dd9?auto=format&fit=crop&w=1100&q=85",
+    alt: "Loose roses, greenery, and delicate filler flowers",
   },
 ];
 
 const steps = [
-  ["01", "Explore", "Browse rentals or tell us what you would like us to source."],
-  ["02", "Choose your way", "Pick up in Madison by appointment, or ask us about delivery."],
-  ["03", "Receive your quote", "We confirm availability, sourcing, and the details that make it work."],
-  ["04", "Celebrate", "Your pieces are prepared with care, ready for your day."],
+  ["01", "Share your vision", "Send your reference photos, quantities, budget, event date, and the details that matter."],
+  ["02", "Compare sourced options", "We find promising faux florals from vetted makers in China and other overseas markets."],
+  ["03", "Approve the order", "Review the materials, colors, quantities, timeline, and landed quote before anything is ordered."],
+  ["04", "Pick up in Madison", "We manage the overseas order and freight, check what arrives, and prepare your flowers for pickup."],
 ];
 
 export default function Home() {
@@ -40,44 +59,42 @@ export default function Home() {
             <img src="/brand/jan-day-wordmark.png" alt="" />
           </a>
           <div className="nav-links">
-            <a href="#collections">Rentals &amp; sourcing</a>
+            <a href="#collections">Faux flowers</a>
             <a href="/about">About us</a>
             <a href="#inquire">Contact</a>
           </div>
-          <a className="button button--small" href="#inquire">
-            Build your wishlist <span aria-hidden="true">→</span>
+          <a className="nav-cta" href="#inquire">
+            Start a sourcing request <span aria-hidden="true">→</span>
           </a>
         </nav>
 
         <div className="hero-content page-shell">
           <div className="hero-copy reveal">
-            <p className="eyebrow eyebrow--light">Thoughtful rentals for Madison celebrations</p>
-            <h1>Every detail.<br />Beautifully considered.</h1>
+            <p className="eyebrow eyebrow--light">Faux flowers, sourced for Madison weddings</p>
+            <h1>The flowers you want.<br />Without the traditional markup.</h1>
             <p className="hero-intro">
-              Thoughtful pieces for Madison-area wedding days that feel relaxed, personal, and entirely your own.
+              Show us the look. We&apos;ll find high-quality options overseas, manage the order and freight, and have your flowers ready for pickup in Madison.
             </p>
-            <a className="button button--cream" href="#collections">
-              Explore the collection <span aria-hidden="true">→</span>
+            <a className="button button--cream" href="#inquire">
+              Start your sourcing request <span aria-hidden="true">→</span>
             </a>
           </div>
-          <div className="hero-note" aria-label="Jan Day promise">
-            <img src="/brand/jan-day-mark.jpg" alt="" />
-            <div>
-              <span>Pick up in Madison.</span>
-              <i />
-              <span>Or let us bring it to you.</span>
-            </div>
-          </div>
+          <figure className="hero-visual">
+            <img
+              src="/og-faux-florals.png"
+              alt="Blush and ivory faux roses, peonies, hydrangeas, and eucalyptus"
+            />
+          </figure>
         </div>
       </section>
 
       <section className="intro page-shell" id="our-story">
-        <p className="eyebrow">A more considered way to gather</p>
+        <p className="eyebrow">A more direct way to buy wedding flowers</p>
         <div className="intro-grid">
-          <h2>Create a setting<br />that feels like you.</h2>
+          <h2>You bring the vision.<br />We handle the distance.</h2>
           <div className="intro-text">
             <p>
-              Jan Day brings softly layered furnishings and tabletop pieces to Madison-area celebrations with a point of view. Rent from our collection, pick up by appointment, or ask us to source the pieces you have been looking for.
+              Jan Day helps Madison-area couples source premium faux florals directly from overseas makers, including specialists in China. We translate your inspiration into product details, compare quality and pricing, and manage the parts of international ordering that are hardest to navigate alone.
             </p>
             <a className="text-link" href="/about">Meet Yanyan &amp; Jen <span aria-hidden="true">↗</span></a>
           </div>
@@ -87,41 +104,38 @@ export default function Home() {
       <section className="collections-section" id="collections">
         <div className="page-shell section-heading">
           <div>
-            <p className="eyebrow">Rentals &amp; sourcing</p>
-            <h2>Pieces with presence.</h2>
+            <p className="eyebrow">What we can source</p>
+            <h2>Start with the floral moment.</h2>
           </div>
-          <p>Begin with our collection, or bring us the reference photo, detail, or feeling you have in mind. We&apos;ll help you find the right fit.</p>
+          <p>These categories are inspiration, not a fixed in-stock catalog. Tell us the color, material, quantity, and scale you want—we&apos;ll source options for your approval.</p>
         </div>
         <div className="collection-grid page-shell">
           {collections.map((collection) => (
             <article className="collection-card" key={collection.title}>
               <div className="collection-image-wrap">
-                <img src={collection.image} alt="" className="collection-image" />
-                <span className="collection-number">{collection.number}</span>
+                <img src={collection.image} alt={collection.alt} className="collection-image" />
               </div>
               <div className="collection-copy">
                 <h3>{collection.title}</h3>
                 <p>{collection.description}</p>
-                <a href="#inquire" className="text-link">View pieces <span aria-hidden="true">→</span></a>
+                <p className="collection-items">{collection.items}</p>
+                <a href="#inquire" className="text-link">Ask us to source this <span aria-hidden="true">→</span></a>
               </div>
             </article>
           ))}
         </div>
-        <div className="service-options page-shell" aria-label="Rental and sourcing options">
+        <div className="service-options page-shell" aria-label="What Jan Day handles for a sourcing order">
           <article>
-            <span>01</span>
-            <h3>Rent from the collection</h3>
-            <p>Choose the furniture, tabletop, and ceremony pieces that are ready for your celebration.</p>
+            <h3>Options worth choosing</h3>
+            <p>We turn reference photos into useful specifications, then compare materials, construction, supplier fit, and pricing.</p>
           </article>
           <article>
-            <span>02</span>
-            <h3>Pick up in Madison</h3>
-            <p>Keep things simple with scheduled pickup in Madison, arranged around your event timeline.</p>
+            <h3>A clear landed quote</h3>
+            <p>You review the product cost, estimated freight, sourcing support, quantities, and timing before you approve the order.</p>
           </article>
           <article>
-            <span>03</span>
-            <h3>Let us source it</h3>
-            <p>Have a specific item in mind? We can source and order products that complete your vision.</p>
+            <h3>Checked, then local</h3>
+            <p>We confirm the order details, follow the shipment, inspect what arrives, and prepare everything for Madison pickup.</p>
           </article>
         </div>
       </section>
@@ -129,7 +143,7 @@ export default function Home() {
       <section className="process page-shell" aria-labelledby="process-title">
         <div className="process-heading">
           <p className="eyebrow">How it works</p>
-          <h2 id="process-title">A simple path to a beautiful day.</h2>
+          <h2 id="process-title">From reference photo to Madison pickup.</h2>
         </div>
         <ol className="steps">
           {steps.map(([number, title, description]) => (
@@ -143,26 +157,26 @@ export default function Home() {
       </section>
 
       <section className="feature">
-        <div className="feature-image" role="img" aria-label="An intimate garden wedding reception" />
+        <div className="feature-image" role="img" aria-label="A floral designer setting up a flower-covered ceremony arch" />
         <div className="feature-copy">
-          <p className="eyebrow eyebrow--on-clay">For celebrations that feel lived in</p>
-          <h2>Let&apos;s create<br />something beautiful.</h2>
+          <p className="eyebrow eyebrow--on-clay">Direct sourcing, made manageable</p>
+          <h2>Overseas value.<br />Local handoff.</h2>
           <p>
-            Whether you are planning an intimate dinner or a full weekend celebration, we&apos;ll help you rent, source, and gather the pieces that carry the feeling through.
+            We work with makers in China and other overseas markets so you can reach better product options and pricing without managing an international order alone. Once they arrive, the flowers are yours to keep, reuse, or resell.
           </p>
-          <a className="button button--cream" href="#inquire">Start your wishlist <span aria-hidden="true">→</span></a>
+          <a className="button button--cream" href="#inquire">Ask us to source your flowers <span aria-hidden="true">→</span></a>
         </div>
       </section>
 
       <section className="inquire page-shell" id="inquire">
         <div className="inquire-intro">
           <p className="eyebrow">Start here</p>
-          <h2>Tell us about<br />your day.</h2>
+          <h2>Show us what<br />you&apos;re looking for.</h2>
           <p>
-            Share the date, Madison-area venue or pickup timeline, and the feeling you&apos;re hoping to create. We&apos;ll be in touch with a thoughtful starting point.
+            Share your date, budget, quantities, palette, and reference photos. We&apos;ll come back with the questions and starting specifications needed to source it well.
           </p>
           <div className="contact-detail">
-            <span>Madison pickup &amp; sourcing requests</span>
+            <span>Overseas sourcing &amp; Madison pickup</span>
             <a href="mailto:hello@jandayrentals.com">hello@jandayrentals.com</a>
           </div>
         </div>
@@ -173,9 +187,9 @@ export default function Home() {
         <a className="footer-logo" href="#top" aria-label="Jan Day Studio home">
           <img src="/brand/jan-day-wordmark.png" alt="" />
         </a>
-        <p>Thoughtful rentals and sourcing for Madison gatherings.</p>
+        <p>High-quality faux florals, sourced overseas and picked up in Madison.</p>
         <div className="footer-links">
-          <a href="#collections">Rentals &amp; sourcing</a>
+          <a href="#collections">Faux flowers</a>
           <a href="/about">About us</a>
           <a href="#inquire">Inquire</a>
         </div>
