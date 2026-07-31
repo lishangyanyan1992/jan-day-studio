@@ -1,7 +1,7 @@
 # Jan Day Studio
 
-The main Jan Day Studio website for Madison-area wedding rentals, local pickup,
-delivery inquiries, and product sourcing. It is a standard Next.js application
+The main Jan Day Studio website for overseas faux-floral sourcing, product and
+freight guidance, and local Madison pickup. It is a standard Next.js application
 ready for zero-configuration deployment on Vercel.
 
 ## Run locally

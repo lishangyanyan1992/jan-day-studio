@@ -4,7 +4,7 @@ Version 1.0 — July 2026
 
 ## Brand foundation
 
-Jan Day Studio is a Madison-area wedding rental and product-sourcing studio. The brand should feel warm, artful, unhurried, and personal: elevated enough for a wedding, approachable enough for a local pickup.
+Jan Day Studio is a Madison-area faux-floral sourcing studio. The brand should feel warm, artful, unhurried, and personal: elevated enough for a wedding, approachable enough for a local pickup.
 
 The visual identity begins with two supplied marks:
 
@@ -19,7 +19,7 @@ The custom logo artwork is the source of truth. Never recreate, typeset, stretch
 2. **Organic, not rustic.** Reference the monogram’s pebble shape through soft asymmetry and curved framing; avoid burlap, farmhouse clichés, or excessive botanical ornament.
 3. **Warm, not sugary.** Favor clay, cream, walnut, and muted natural tones over bright pink or pure white.
 4. **Editorial, not ornamental.** Let photography, typography, and negative space carry the design. Decorative flourishes should be rare.
-5. **Clear, not salesy.** Explain rentals, Madison pickup, delivery, and sourcing in plain language with one obvious next step.
+5. **Clear, not salesy.** Explain overseas faux-floral sourcing, order approval, landed pricing, and Madison pickup in plain language with one obvious next step.
 
 ## Logo system
 
@@ -150,23 +150,23 @@ Jan Day sounds like a thoughtful local creative partner.
 - Short sentences; contractions are welcome
 - Prefer “your day,” “pieces,” “gather,” “pick up,” and “we’ll help”
 - Say “Madison-area” when geographic clarity matters
-- Explain product sourcing as a collaborative service, not a concierge luxury
+- Explain custom faux-floral sourcing as a collaborative service, not a concierge luxury
 - Avoid “perfect,” “dream wedding,” “one-stop shop,” “magical,” and urgency-based sales language
 
 ### Core message
 
-**Thoughtful rentals and sourcing for Madison gatherings.**
+**High-quality faux florals, sourced overseas and picked up in Madison.**
 
 ### Primary call to action
 
-**Build your wishlist**
+**Start a sourcing request**
 
 ### Supporting calls to action
 
-- Explore the collection
-- Ask us to source it
+- See what we can source
+- Ask us to source your flowers
 - Plan your pickup
-- Tell us about your day
+- Share your reference photos
 
 ## Accessibility baseline
 
@@ -183,7 +183,7 @@ Jan Day sounds like a thoughtful local creative partner.
 
 - Use the supplied logo files unchanged.
 - Let the clay color and typography establish recognition.
-- Keep operational choices—pickup, delivery, sourcing—easy to find.
+- Keep the sourcing steps, order approval, landed quote, and Madison pickup easy to find.
 - Pair poetic headlines with concrete supporting copy.
 
 ### Do not

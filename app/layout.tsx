@@ -16,8 +16,8 @@ const sans = DM_Sans({
 
 const productionHost = process.env.VERCEL_PROJECT_PRODUCTION_URL ?? process.env.VERCEL_URL;
 const siteUrl = productionHost ? new URL(`https://${productionHost}`) : new URL("http://localhost:3000");
-const title = "Jan Day Studio | Madison wedding rentals";
-const description = "Thoughtful wedding rentals, Madison pickup, delivery, and product sourcing.";
+const title = "Jan Day Studio | Faux flower sourcing in Madison";
+const description = "High-quality faux wedding flowers sourced from vetted overseas makers, with clear ordering support and local Madison pickup.";
 
 export const metadata: Metadata = {
   metadataBase: siteUrl,
@@ -27,13 +27,13 @@ export const metadata: Metadata = {
     title,
     description,
     type: "website",
-    images: [{ url: "/og.png", width: 1200, height: 630, alt: "Jan Day Studio wedding rentals" }],
+    images: [{ url: "/og-faux-florals.png", width: 1731, height: 909, alt: "Jan Day Studio faux flowers sourced for Madison weddings" }],
   },
   twitter: {
     card: "summary_large_image",
     title,
     description,
-    images: ["/og.png"],
+    images: ["/og-faux-florals.png"],
   },
   icons: {
     icon: "/brand/jan-day-mark.jpg",

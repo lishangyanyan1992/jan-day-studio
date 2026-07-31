@@ -52,9 +52,9 @@ export default async function InventoryPage({
       <details className="admin-disclosure" id="new">
         <summary>Add a product <span aria-hidden="true">+</span></summary>
         <form action={createProductAction} className="admin-form admin-form-grid">
-          <label>Product name<input name="name" required placeholder="Ivory taper candle holder" /></label>
+          <label>Product name<input name="name" required placeholder="Ivory real-touch bridal bouquet" /></label>
           <label>SKU<input name="sku" placeholder="TBL-001" /></label>
-          <label>Category<input name="category" required placeholder="Tabletop" /></label>
+          <label>Category<input name="category" required placeholder="Personal Flowers" /></label>
           <label>Rental rate<input name="rental_rate" type="number" min="0" step="0.01" defaultValue="0.00" /></label>
           <label>Total quantity<input name="total_quantity" type="number" min="0" defaultValue="1" required /></label>
           <label>In maintenance<input name="maintenance_quantity" type="number" min="0" defaultValue="0" required /></label>
