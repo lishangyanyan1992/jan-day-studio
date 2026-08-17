@@ -2,7 +2,7 @@
 
 import { FormEvent, useState } from "react";
 
-const contactEmail = "hello@jandayrentals.com";
+const contactEmail = "lshangyanyan@gmail.com";
 
 export function InquiryForm() {
   const [submitted, setSubmitted] = useState(false);
