@@ -221,6 +221,18 @@
 .admin-timeline div > span,
 .admin-timeline time { color: var(--admin-muted); font-size: .64rem; }
 
+.admin-source-list { display: grid; gap: 24px; }
+.admin-source-card { border: 1px solid var(--admin-line); padding: clamp(24px, 3vw, 40px); background: var(--admin-paper); }
+.admin-source-heading { display: grid; grid-template-columns: 128px minmax(0, 1fr); gap: 26px; align-items: center; padding-bottom: 30px; }
+.admin-source-heading img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; }
+.admin-source-heading h2 { font-size: clamp(2rem, 3vw, 3rem); }
+.admin-source-market { display: inline-block; margin-top: 13px; color: var(--admin-muted); font-size: .68rem; letter-spacing: .08em; text-transform: uppercase; }
+.admin-source-details { display: grid; grid-template-columns: repeat(4, 1fr); margin: 0; border-top: 1px solid var(--admin-line); border-left: 1px solid var(--admin-line); }
+.admin-source-details div { min-width: 0; border-right: 1px solid var(--admin-line); border-bottom: 1px solid var(--admin-line); padding: 17px; }
+.admin-source-details dt { margin-bottom: 7px; color: var(--admin-muted); font-size: .58rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; }
+.admin-source-details dd { margin: 0; font-size: .76rem; line-height: 1.55; overflow-wrap: anywhere; }
+.admin-source-actions { display: flex; gap: 24px; align-items: center; margin-top: 25px; }
+
 @media (max-width: 1000px) {
   .admin-shell { grid-template-columns: 190px minmax(0, 1fr); }
   .admin-page { width: min(100% - 44px, 1050px); }
@@ -229,6 +241,7 @@
   .admin-metrics article:nth-child(-n + 2) { border-bottom: 1px solid var(--admin-line); }
   .admin-form-grid { grid-template-columns: 1fr 1fr; }
   .admin-reservation-grid { grid-template-columns: 1fr; }
+  .admin-source-details { grid-template-columns: 1fr 1fr; }
 }
 
 @media (max-width: 720px) {
@@ -261,4 +274,7 @@
   .admin-line-items article > span:nth-of-type(2) { display: none; }
   .admin-timeline article { grid-template-columns: 20px 1fr; }
   .admin-timeline time { grid-column: 2; }
+  .admin-source-heading { grid-template-columns: 90px minmax(0, 1fr); gap: 18px; }
+  .admin-source-details { grid-template-columns: 1fr; }
+  .admin-source-actions { align-items: flex-start; flex-direction: column; }
 }

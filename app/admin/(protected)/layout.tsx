@@ -7,6 +7,7 @@ import { SetupNotice } from "../components";
 const navItems = [
   ["Overview", "/admin"],
   ["Inventory", "/admin/inventory"],
+  ["Sourcing", "/admin/sourcing"],
   ["Reservations", "/admin/reservations"],
   ["Activity", "/admin/activity"],
 ];
