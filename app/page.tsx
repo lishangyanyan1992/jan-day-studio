@@ -1,119 +1,89 @@
 import Link from "next/link";
 import { CatalogFooter, CatalogHeader } from "./CatalogChrome";
-import { catalogCollections, purpleArch } from "@/lib/catalog";
+import { purpleArch } from "@/lib/catalog";
 
-const steps = [
-  ["01", "Choose the flowers", "Browse the Jan Day rental collection or send us the look you want."],
-  ["02", "We source with care", "We compare high-quality makers in China and other overseas markets, then manage ordering and freight."],
-  ["03", "Pick up in Madison", "We inspect what arrives and prepare your flowers for an easy local handoff."],
-];
+const studioPrinciples = [
+  ["01", "Personal by design", "Every flower, map, sticker or printed piece begins with the people and occasion it belongs to."],
+  ["02", "Beautiful and practical", "We care about how something looks, how it works and how clearly it fits the real budget and timeline."],
+  ["03", "Made through conversation", "You work directly with our small studio, from the first reference image to the final handoff."],
+] as const;
 
 export default function Home() {
   return (
-    <main className="shop-page">
+    <main className="shop-page studio-home">
       <CatalogHeader />
 
-      <section className="shop-hero page-shell" id="top">
-        <div className="shop-hero-copy">
-          <p className="shop-kicker">The Jan Day floral collection</p>
-          <h1>Beautiful faux flowers, thoughtfully within reach.</h1>
-          <p>
-            Browse ready-to-rent flowers for Madison celebrations—or show us your vision and let us source high-quality options overseas, including from trusted makers in China.
-          </p>
-          <div className="shop-actions">
-            <Link className="shop-button shop-button--dark" href="/ceremony-florals/purple-arch">
-              Shop Purple Arch <span aria-hidden="true">→</span>
-            </Link>
-            <a className="shop-text-link" href="#how-it-works">How sourcing works</a>
+      <section className="studio-home-hero page-shell">
+        <p className="shop-kicker">Jan Day Studio · Madison, Wisconsin</p>
+        <h1>We make the details feel like yours.</h1>
+        <p>
+          Jan Day is a floral and design studio for celebrations, gifts and thoughtful everyday moments. Rent or buy faux flowers, or work with us to design something entirely personal.
+        </p>
+      </section>
+
+      <section className="home-businesses page-shell" aria-label="Jan Day Studio services">
+        <Link href="/ceremony-florals" className="home-business-card">
+          <figure>
+            <img src={purpleArch.images[0].src} alt={purpleArch.images[0].alt} />
+          </figure>
+          <div className="home-business-copy">
+            <div><span>01</span><p>Rent · Buy · Source</p></div>
+            <h2>Florals</h2>
+            <p>Reusable faux flowers for ceremonies and celebrations, with rental, purchase and overseas sourcing options.</p>
+            <span className="shop-text-link">Explore florals</span>
           </div>
-        </div>
-        <Link className="shop-hero-media" href={purpleArch.href} aria-label="View Purple Arch">
-          <img src={purpleArch.images[0].src} alt={purpleArch.images[0].alt} />
-          <span>Now available · Ceremony</span>
+        </Link>
+
+        <Link href="/design-studio" className="home-business-card">
+          <div className="home-design-visual" aria-hidden="true">
+            <div className="home-design-sheet home-design-sheet--one"><span>JD</span><small>Made personally</small></div>
+            <div className="home-design-sheet home-design-sheet--two"><span>02</span><small>Maps · stickers · presents</small></div>
+            <div className="home-design-seal">Jan<br />Day</div>
+          </div>
+          <div className="home-business-copy">
+            <div><span>02</span><p>Imagine · Design · Make</p></div>
+            <h2>Design Studio</h2>
+            <p>Custom presents, maps, stickers, printed pieces and visual details designed around your story.</p>
+            <span className="shop-text-link">Explore design</span>
+          </div>
         </Link>
       </section>
 
-      <section className="shop-featured page-shell" aria-labelledby="featured-title">
-        <div className="shop-section-heading">
-          <p className="shop-kicker">Featured rental</p>
-          <h2 id="featured-title">Made to transform the room.</h2>
-          <Link className="shop-text-link" href={purpleArch.categoryHref}>View ceremony collection</Link>
-        </div>
-        <article className="featured-product">
-          <Link className="featured-product-image" href={purpleArch.href}>
-            <img src={purpleArch.images[1].src} alt={purpleArch.images[1].alt} />
-          </Link>
-          <div className="featured-product-copy">
-            <p className="product-category">{purpleArch.category}</p>
-            <h3><Link href={purpleArch.href}>{purpleArch.name}</Link></h3>
-            <p>{purpleArch.description}</p>
-            <div className="featured-product-meta">
-              <span>{purpleArch.priceLabel}</span>
-              <span>{purpleArch.palette}</span>
-            </div>
-            <Link className="shop-button shop-button--outline" href={purpleArch.href}>
-              View the piece <span aria-hidden="true">→</span>
-            </Link>
-          </div>
-        </article>
-      </section>
-
-      <section className="shop-collections" id="collections" aria-labelledby="collections-title">
-        <div className="page-shell">
-          <div className="shop-section-heading shop-section-heading--collections">
-            <p className="shop-kicker">Browse the catalog</p>
-            <h2 id="collections-title">Flowers for every part of the day.</h2>
-            <p>One ceremony piece is ready now. The rest of the collection is growing.</p>
-          </div>
-          <div className="shop-collection-grid">
-            {catalogCollections.map((collection, index) => (
-              <Link className={`shop-collection-card ${collection.image ? "is-live" : "is-coming"}`} href={collection.href} key={collection.name}>
-                <div className="shop-collection-image">
-                  {collection.image ? (
-                    <img src={collection.image.src} alt={collection.image.alt} />
-                  ) : (
-                    <div className="collection-placeholder" aria-hidden="true"><span>{String(index + 1).padStart(2, "0")}</span></div>
-                  )}
-                </div>
-                <div>
-                  <h3>{collection.title}</h3>
-                  <p>{collection.status}</p>
-                </div>
-              </Link>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="shop-editorial page-shell" id="how-it-works">
-        <figure>
-          <img src={purpleArch.images[5].src} alt={purpleArch.images[5].alt} />
-        </figure>
+      <section className="home-about page-shell" aria-labelledby="home-about-title">
         <div>
-          <p className="shop-kicker">Beyond the catalog</p>
-          <h2>You pick the flowers. We handle the distance.</h2>
-          <p className="shop-editorial-lead">
-            Jan Day helps couples reach premium faux florals without navigating an international order alone. You share the look, quantities and budget; we translate the vision into useful specifications, compare options and manage the overseas order.
+          <p className="shop-kicker">What brings it together</p>
+          <h2 id="home-about-title">One small studio. Two ways to make a moment personal.</h2>
+        </div>
+        <div className="home-about-copy">
+          <p>
+            We&apos;re Yanyan and Jen, the founders of Jan Day Studio. We bring together thoughtful visual design, practical research and direct collaboration to help ideas become real, useful things.
           </p>
-          <ol className="shop-steps">
-            {steps.map(([number, title, description]) => (
-              <li key={number}>
-                <span>{number}</span>
-                <div><h3>{title}</h3><p>{description}</p></div>
-              </li>
-            ))}
-          </ol>
+          <p>
+            Sometimes that means finding the right flowers. Sometimes it means designing the map, present or tiny sticker that completes the whole experience.
+          </p>
         </div>
       </section>
 
-      <section className="shop-contact" id="contact">
-        <div className="page-shell shop-contact-inner">
-          <p className="shop-kicker">Have another flower in mind?</p>
-          <h2>Show us the look.<br />We’ll help you find it.</h2>
-          <p>Send your reference images, event date, quantities and budget. We’ll help you understand what can be sourced and what it will take to bring it to Madison.</p>
-          <a className="shop-button shop-button--light" href="mailto:lshangyanyan@gmail.com?subject=Jan%20Day%20flower%20sourcing%20request">
-            Start a sourcing request <span aria-hidden="true">→</span>
-          </a>
+      <section className="home-principles">
+        <div className="page-shell home-principles-grid">
+          {studioPrinciples.map(([number, title, description]) => (
+            <article key={number}>
+              <span>{number}</span>
+              <h3>{title}</h3>
+              <p>{description}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="home-contact">
+        <div className="page-shell home-contact-inner">
+          <p className="shop-kicker">Start with the idea</p>
+          <h2>What would you like to make?</h2>
+          <p>Tell us about the flowers, design or occasion you have in mind. We&apos;ll help you find the clearest next step.</p>
+          <Link className="shop-button shop-button--light" href="/contact">
+            Contact Jan Day <span aria-hidden="true">→</span>
+          </Link>
         </div>
       </section>
 

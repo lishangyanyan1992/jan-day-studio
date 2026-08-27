@@ -2,7 +2,7 @@
 
 import { FormEvent, useState } from "react";
 
-export function AvailabilityForm() {
+export function AvailabilityForm({ productName = "Purple Arch" }: { productName?: string }) {
   const [status, setStatus] = useState("");
 
   function submit(event: FormEvent<HTMLFormElement>) {
@@ -13,9 +13,9 @@ export function AvailabilityForm() {
     const date = String(form.get("eventDate") || "Date not set");
     const venue = String(form.get("venue") || "Venue not set");
     const message = String(form.get("message") || "");
-    const subject = encodeURIComponent(`Purple Arch availability — ${date}`);
+    const subject = encodeURIComponent(`${productName} availability — ${date}`);
     const body = encodeURIComponent(
-      `Hi Jan Day Studio,\n\nI'd like to check whether the Purple Arch is available.\n\nName: ${name}\nEmail: ${email}\nEvent date: ${date}\nVenue: ${venue}\n\nNotes:\n${message}`,
+      `Hi Jan Day Studio,\n\nI'd like to check whether the ${productName} is available.\n\nName: ${name}\nEmail: ${email}\nEvent date: ${date}\nVenue: ${venue}\n\nNotes:\n${message}`,
     );
 
     setStatus("Your email app is opening with your request ready to send.");

@@ -32,7 +32,7 @@ export default function PurpleArchPage() {
         </div>
 
         <aside className="product-details">
-          <p className="product-category">{purpleArch.category} rental</p>
+          <p className="product-category">{purpleArch.category} · {purpleArch.shape}</p>
           <h1>{purpleArch.name}</h1>
           <p className="product-price">{purpleArch.priceLabel}</p>
           <p className="product-description">{purpleArch.description}</p>

@@ -16,8 +16,8 @@ const sans = DM_Sans({
 
 const productionHost = process.env.VERCEL_PROJECT_PRODUCTION_URL ?? process.env.VERCEL_URL;
 const siteUrl = productionHost ? new URL(`https://${productionHost}`) : new URL("http://localhost:3000");
-const title = "Jan Day Studio | Faux flower rentals & sourcing in Madison";
-const description = "Browse thoughtful faux-flower rentals for Madison celebrations, or let Jan Day Studio source high-quality florals overseas for local pickup.";
+const title = "Jan Day Studio | Florals & custom design in Madison";
+const description = "Browse thoughtful faux-flower rentals and sourcing, or work with Jan Day Design Studio on presents, maps, stickers and custom visual details.";
 
 export const metadata: Metadata = {
   metadataBase: siteUrl,
