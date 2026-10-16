@@ -1,12 +1,22 @@
-# Jan Day Studio
+# Jan Day gift shop website
 
-The main Jan Day Studio website for overseas faux-floral sourcing, product and
-freight guidance, and local Madison pickup. It is a standard Next.js application
-ready for zero-configuration deployment on Vercel.
+A responsive, browse-only website for Jan Day, a small design-led gift shop located inside China Wok in Stevens Point, Wisconsin.
+
+## What is included
+
+- Home, Shop, Jan Day Originals, Seasonal, Weddings, Visit, and Contact pages
+- Product-category photography and typical price ranges
+- Separate Weddings treatment with a complete quote inquiry form
+- Holiday gift box and corporate gifting inquiry flow
+- Responsive mobile navigation and accessible forms
+- Owner-confirmation placeholders for the Jan Day name story, hours, parking, phone, Instagram, and wedding-package details
+- Existing private inventory administration routes remain available under `/admin`
+
+See [`docs/SITE_CONTENT.md`](docs/SITE_CONTENT.md) for the sitemap and page-copy handoff, and [`DESIGN.md`](DESIGN.md) for the design system.
 
 ## Run locally
 
-Requirements: Node.js 20.9 or newer.
+Requires Node.js 20.9 or newer.
 
 ```bash
 npm install
@@ -15,42 +25,22 @@ npm run dev
 
 Open [http://localhost:3000](http://localhost:3000).
 
-## Validate a production build
+## Validate
 
 ```bash
 npm test
 ```
 
-The test command creates the same optimized Next.js build Vercel will use and
-checks the landing page and standalone brand guide.
+The command runs the production Next.js build and the repository tests.
 
-## Deploy to Vercel
+## Key files
 
-1. Push this folder to a GitHub, GitLab, or Bitbucket repository.
-2. In Vercel, choose **Add New → Project** and import that repository.
-3. Leave the detected framework as **Next.js** and keep the default build settings.
-4. Select **Deploy**.
+- Global shell and navigation: `app/CatalogChrome.tsx`
+- Main pages: `app/page.tsx`, `app/shop/`, `app/originals/`, `app/seasonal/`, `app/weddings/`, `app/visit/`, `app/contact/`
+- Forms: `app/ContactForm.tsx`, `app/WeddingInquiryForm.tsx`
+- Visual system: `app/globals.css`
+- Generated product imagery: `public/images/shop/`
 
-No environment variables are required. Vercel supplies the production hostname
-used by the site's social sharing metadata.
+## Before launch
 
-## Content and assets
-
-- Main landing page: `app/page.tsx`
-- Inquiry form: `app/InquiryForm.tsx`
-- Visual styling: `app/globals.css`
-- Brand documentation: `DESIGN.md`
-- HTML brand guide: `public/brand-guide.html`
-- Logo artwork: `public/brand/`
-
-The inquiry form opens a pre-filled email to `hello@jandayrentals.com`.
-
-## Inventory administration
-
-The protected inventory and reservation dashboard lives at `/admin`. It uses
-Supabase for PostgreSQL storage and staff authentication. Until Supabase is
-configured, the public site continues to work and `/admin` displays setup
-instructions.
-
-See [`docs/INVENTORY_SETUP.md`](docs/INVENTORY_SETUP.md) for the database,
-staff-account, and Vercel setup steps.
+Search the codebase for `OWNER TO ADD`, `OWNER TO CONFIRM`, and `CONFIRM WITH OWNER`. Replace every marked item with approved information before making the site public. The inquiry forms currently prepare an email to `lshangyanyan@gmail.com`; confirm or replace that address as part of launch review.
