@@ -5,34 +5,28 @@ This document records the approved prototype structure, final drafted copy, and 
 ## Sitemap
 
 ```text
-Home  /
-├── Shop  /shop
-├── Jan Day Originals  /originals
-├── Seasonal  /seasonal
-├── Weddings  /weddings
-├── Visit  /visit
-└── Contact  /contact
+Home  /   (single page: hero → categories → contact form)
 ```
 
 Supporting actions:
 
-- Shop → Visit for in-person browsing
-- Shop → Contact for stock questions
-- Seasonal → Contact for holiday gift boxes and corporate gifts
-- Weddings → on-page quote form
-- Every page → Visit details and Contact in the footer
+- Header "Get in touch" and footer "Contact Jan Day" jump to the contact form at `/#contact`
+- Footer → Google Maps directions and Instagram
+
+Weddings and Contact were removed on 2026-11-05; the contact form now sits at the end of the home page. Old page addresses redirect to `/`.
+Shop, Jan Day Originals, Seasonal, and Visit were removed on 2026-11-05. The home page now shows three categories: Jewelry, Decorations, and Jan Day Originals.
 
 The previous floral/design-studio routes are not part of this sitemap. The private inventory admin remains at `/admin`.
 
 ## Global copy
 
-**Announcement:** Opening soon · Inside China Wok · Stevens Point, Wisconsin
+**Announcement:** Opening soon · Inside China Wok and Online · Stevens Point, Wisconsin
 
 **Footer introduction:** A small shop for useful, delightful, and beautifully made gifts.
 
 **Visit block:** Inside China Wok, 135 Division St N, Stevens Point, WI.
 
-**Instagram note:** New arrivals will land on Instagram first. `[OWNER TO ADD LINK + HANDLE]`
+**Instagram note:** New arrivals will land on Instagram first. [@shopjanday](https://www.instagram.com/shopjanday/)
 
 ## Home `/`
 
@@ -140,7 +134,7 @@ Browse while you wait for a table, stop on your way out, or visit just for the s
 
 **Phone:** `[OWNER TO ADD]`
 
-**Instagram:** `[OWNER TO ADD LINK + HANDLE]`
+**Instagram:** [@shopjanday](https://www.instagram.com/shopjanday/)
 
 ## Owner confirmation checklist
 
@@ -148,7 +142,7 @@ Browse while you wait for a table, stop on your way out, or visit just for the s
 - [ ] Final hours and holiday exceptions
 - [ ] Parking and accessible-entry guidance
 - [ ] Public phone number
-- [ ] Instagram handle and URL
+- [x] Instagram handle and URL (@shopjanday)
 - [ ] Public inquiry email
 - [ ] Wedding service scope, package minimums, rental logistics, and quote process
 - [ ] Opening date and whether “Opening soon” should remain

@@ -1,61 +1,19 @@
-"use client";
-
 import Link from "next/link";
-import { usePathname } from "next/navigation";
-import { useState } from "react";
-
-const navItems = [
-  ["Shop", "/shop"],
-  ["Jan Day Originals", "/originals"],
-  ["Seasonal", "/seasonal"],
-  ["Weddings", "/weddings"],
-  ["Visit", "/visit"],
-  ["Contact", "/contact"],
-] as const;
 
 export function CatalogHeader() {
-  const pathname = usePathname();
-  const [open, setOpen] = useState(false);
-
   return (
     <>
       <div className="announcement">
         <span>Opening soon</span>
-        <p>Inside China Wok · Stevens Point, Wisconsin</p>
+        <p>Inside China Wok and Online · Stevens Point, Wisconsin</p>
       </div>
       <header className="site-header">
         <div className="page-shell header-inner">
-          <Link className="wordmark" href="/" aria-label="Jan Day home" onClick={() => setOpen(false)}>
-            <span className="wordmark-jan">JAN</span>
-            <span className="wordmark-day">DAY</span>
+          <Link className="wordmark" href="/" aria-label="Jan Day home">
+            <img className="wordmark-logo" src="/brand/jan-day-wordmark.png" alt="Jan Day Studio" width={682} height={230} />
           </Link>
-
-          <button
-            className="menu-toggle"
-            type="button"
-            aria-expanded={open}
-            aria-controls="primary-nav"
-            onClick={() => setOpen((value) => !value)}
-          >
-            <span>{open ? "Close" : "Menu"}</span>
-            <i aria-hidden="true" />
-          </button>
-
-          <nav id="primary-nav" className={`main-nav ${open ? "is-open" : ""}`} aria-label="Main navigation">
-            {navItems.map(([label, href]) => (
-              <Link
-                key={href}
-                href={href}
-                className={pathname === href ? "is-active" : ""}
-                onClick={() => setOpen(false)}
-              >
-                {label}
-              </Link>
-            ))}
-          </nav>
-
-          <Link className="header-visit" href="/visit">
-            Find the shop <span aria-hidden="true">↗</span>
+          <Link className="header-visit" href="/#contact">
+            Get in touch <span aria-hidden="true">↓</span>
           </Link>
         </div>
       </header>
@@ -69,19 +27,9 @@ export function CatalogFooter() {
       <div className="page-shell footer-grid">
         <div className="footer-brand">
           <Link className="wordmark wordmark--light" href="/" aria-label="Jan Day home">
-            <span className="wordmark-jan">JAN</span>
-            <span className="wordmark-day">DAY</span>
+            <img className="wordmark-logo" src="/brand/jan-day-wordmark.png" alt="Jan Day Studio" width={682} height={230} />
           </Link>
           <p>A small shop for useful, delightful, and beautifully made gifts.</p>
-        </div>
-        <div>
-          <p className="footer-label">Browse</p>
-          <nav aria-label="Shop links">
-            <Link href="/shop">Shop</Link>
-            <Link href="/originals">Jan Day Originals</Link>
-            <Link href="/seasonal">Seasonal</Link>
-            <Link href="/weddings">Weddings</Link>
-          </nav>
         </div>
         <div>
           <p className="footer-label">Find us</p>
@@ -90,13 +38,13 @@ export function CatalogFooter() {
             135 Division St N<br />
             Stevens Point, WI
           </address>
-          <Link className="footer-link" href="/visit">Visit details →</Link>
+          <a className="footer-link" href="https://www.google.com/maps/search/?api=1&query=China+Wok+135+Division+St+N+Stevens+Point+WI" target="_blank" rel="noreferrer">Get directions ↗</a>
         </div>
         <div>
           <p className="footer-label">Keep in touch</p>
           <p>New arrivals will land on Instagram first.</p>
-          <span className="owner-placeholder">Instagram link · OWNER TO ADD</span>
-          <Link className="footer-link" href="/contact">Contact Jan Day →</Link>
+          <a className="footer-link" href="https://www.instagram.com/shopjanday/" target="_blank" rel="noreferrer">@shopjanday on Instagram ↗</a>
+          <Link className="footer-link" href="/#contact">Contact Jan Day ↑</Link>
         </div>
       </div>
       <div className="page-shell footer-bottom">

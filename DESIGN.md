@@ -2,7 +2,7 @@
 
 ## Core idea: paper, lacquer, and ink
 
-Jan Day should feel like a tiny, beautifully edited shop—not a catalog template and not a themed restaurant gift counter. The visual system pairs tactile paper neutrals with lacquer red, deep tea green, editorial typography, and product still lifes. It is warm and recognizably Asian-inspired without leaning on decorative clichés.
+Jan Day should feel like a tiny, beautifully edited shop—not a catalog template and not a themed restaurant gift counter. The visual system pairs warm paper neutrals with the clay tones of the Jan Day Studio logo, editorial typography, and product still lifes. It is warm and recognizably Asian-inspired without leaning on decorative clichés.
 
 ## Experience principles
 
@@ -14,16 +14,19 @@ Jan Day should feel like a tiny, beautifully edited shop—not a catalog templat
 
 ## Visual system
 
+All colors derive from the Jan Day Studio logo clay, `#C29981`. The logo tan itself is too light for text (2.4:1 on paper), so it is used for decoration; darker shades of it carry text and buttons.
+
 | Token | Value | Use |
 | --- | --- | --- |
-| Paper | `#F7F1E7` | Main page field |
-| Deep paper | `#EBE1D2` | Section contrast and forms |
-| Cream | `#FFFAF0` | Cards and light-on-dark text |
-| Ink | `#201E19` | Type and footer |
-| Persimmon | `#CF3F2E` | Primary action and signature accent |
-| Oxblood | `#8C271D` | Weddings and small labels |
-| Tea green | `#263F35` | Anchoring dark panels |
-| Peach | `#E6A88E` | Friendly supporting accent |
+| Clay | `#C29981` | The logo color. Decorative only: accents, fills, illustrations |
+| Clay light | `#E3C7B5` | Small labels on dark panels |
+| Paper | `#FAF5F0` | Main page field |
+| Deep paper | `#F1E7DF` | Section contrast and forms |
+| Cream | `#FFFCF9` | Cards and light-on-dark text |
+| Ink | `#3B2E27` | Type and footer |
+| Accent | `#93644C` | Primary buttons, headline italics (4.65:1 on paper) |
+| Accent dark | `#7A5240` | Hover states and small labels |
+| Cocoa | `#4A372D` | Announcement bar and dark panels |
 
 ### Type
 

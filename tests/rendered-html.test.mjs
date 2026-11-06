@@ -2,7 +2,7 @@ import assert from "node:assert/strict";
 import { access, readFile } from "node:fs/promises";
 import test from "node:test";
 
-test("the public shell exposes the full gift-shop sitemap", async () => {
+test("the site is a single page with no links to removed pages", async () => {
   const [layout, chrome, home] = await Promise.all([
     readFile(new URL("../app/layout.tsx", import.meta.url), "utf8"),
     readFile(new URL("../app/CatalogChrome.tsx", import.meta.url), "utf8"),
@@ -10,84 +10,58 @@ test("the public shell exposes the full gift-shop sitemap", async () => {
   ]);
 
   assert.match(layout, /design-led gift shop in Stevens Point/i);
-  for (const route of ["/shop", "/originals", "/seasonal", "/weddings", "/visit", "/contact"]) {
-    assert.match(chrome, new RegExp(route.replace("/", "\\/")));
+  for (const route of ["/shop", "/originals", "/seasonal", "/visit", "/weddings", "/contact"]) {
+    assert.doesNotMatch(chrome, new RegExp(`"${route}"`));
+    assert.doesNotMatch(home, new RegExp(`"${route}"`));
   }
   assert.match(home, /Small gifts\./i);
   assert.match(home, /Good days\./i);
-  assert.match(home, /inside our family&apos;s restaurant/i);
-  assert.match(home, /meaning behind “Jan Day” goes here/i);
-  assert.match(home, /OWNER TO ADD/i);
-  assert.match(home, /no online checkout/i);
+  assert.match(home, /Opening<br \/><em>soon\.<\/em>/);
+  assert.match(home, /Inside China Wok and Online/);
+  assert.match(home, /Asian-inspired gifts/i);
 });
 
-test("shop categories and price ranges match the business brief", async () => {
-  const page = await readFile(new URL("../app/shop/page.tsx", import.meta.url), "utf8");
-  const expectations = [
-    ["Lifestyle gifts", "$5–$30"],
-    ["Teaware & tableware", "$8–$45"],
-    ["Seasonal & festival", "$3–$40"],
-    ["Home & decor", "$10–$50"],
-    ["Jan Day Originals", "$5–$35"],
-  ];
-  for (const [name, price] of expectations) {
-    assert.match(page, new RegExp(name.replace("&", "&"), "i"));
-    assert.ok(page.includes(price));
+test("home page shows the three launch categories", async () => {
+  const home = await readFile(new URL("../app/page.tsx", import.meta.url), "utf8");
+  for (const name of ["Jewelry", "Decorations", "Jan Day Originals"]) {
+    assert.match(home, new RegExp(`title: "${name}"`));
   }
-  assert.match(page, /browse-only online/i);
-  assert.match(page, /No cart/i);
+  for (const image of ["jewelry.jpg", "decorations.jpg", "originals.jpg"]) {
+    assert.match(home, new RegExp(`/images/shop/${image}`));
+  }
+  assert.doesNotMatch(home, /Coming to the shop/);
+  assert.doesNotMatch(home, /Meet Jan Day Originals/);
 });
 
-test("originals and seasonal pages carry their complete propositions", async () => {
-  const [originals, seasonal] = await Promise.all([
-    readFile(new URL("../app/originals/page.tsx", import.meta.url), "utf8"),
-    readFile(new URL("../app/seasonal/page.tsx", import.meta.url), "utf8"),
-  ]);
-  assert.match(originals, /Made by Jan Day/i);
-  assert.match(originals, /Illustrated cards/i);
-  assert.match(originals, /Tote bags/i);
-  assert.match(originals, /Small prints/i);
-  assert.match(originals, /Gift boxes/i);
-  assert.match(seasonal, /Lunar New Year/i);
-  assert.match(seasonal, /Mid-Autumn/i);
-  assert.match(seasonal, /corporate gifts/i);
-  assert.match(seasonal, /gift-boxes/i);
-});
-
-test("weddings has a separate quote flow with every requested field", async () => {
-  const [page, form] = await Promise.all([
-    readFile(new URL("../app/weddings/page.tsx", import.meta.url), "utf8"),
-    readFile(new URL("../app/WeddingInquiryForm.tsx", import.meta.url), "utf8"),
-  ]);
-  assert.match(page, /Flowers that last/i);
-  assert.match(page, /No wilting/i);
-  assert.match(page, /Camera-ready/i);
-  assert.match(page, /Reusable/i);
-  assert.match(page, /Budget-aware/i);
-  assert.match(page, /Contact us for a quote/i);
-  assert.doesNotMatch(page, /Packages from \$/i);
-  for (const field of ["date", "venue", "guests", "items", "budget", "message"]) {
-    assert.match(form, new RegExp(`name=\\"${field}\\"`));
+test("removed pages stay removed", async () => {
+  for (const route of ["shop", "originals", "seasonal", "visit", "weddings", "contact"]) {
+    await assert.rejects(access(new URL(`../app/${route}/page.tsx`, import.meta.url)));
   }
 });
 
-test("visit and contact preserve explicit owner confirmation markers", async () => {
-  const [visit, contact, form] = await Promise.all([
-    readFile(new URL("../app/visit/page.tsx", import.meta.url), "utf8"),
-    readFile(new URL("../app/contact/page.tsx", import.meta.url), "utf8"),
+test("home page ends with the contact form and links Instagram", async () => {
+  const [chrome, contact, form] = await Promise.all([
+    readFile(new URL("../app/CatalogChrome.tsx", import.meta.url), "utf8"),
+    readFile(new URL("../app/page.tsx", import.meta.url), "utf8"),
     readFile(new URL("../app/ContactForm.tsx", import.meta.url), "utf8"),
   ]);
-  assert.match(visit, /135 Division St N/i);
-  assert.match(visit, /Roughly 10:30 AM–9:00 PM/i);
-  assert.match(visit, /CONFIRM WITH OWNER/i);
-  assert.match(visit, /Parking/i);
-  assert.match(contact, /OWNER TO ADD LINK \+ HANDLE/i);
-  assert.match(form, /Holiday gift box pre-order/i);
-  assert.match(form, /Corporate gifts/i);
+  assert.match(chrome, /135 Division St N/i);
+  assert.match(chrome, /google\.com\/maps/i);
+  assert.match(contact, /instagram\.com\/shopjanday/);
+  assert.match(chrome, /instagram\.com\/shopjanday/);
+  assert.match(contact, /id="contact"/);
+  assert.match(contact, /<ContactForm \/>\s*<\/div>\s*<\/section>\s*<\/SiteFrame>/);
+  assert.match(chrome, /href="\/#contact"/);
+  for (const field of ["name", "email", "phone", "message"]) {
+    assert.match(form, new RegExp(`name="${field}"`));
+  }
+  for (const removed of ["interest", "quantity", "budget", "neededBy"]) {
+    assert.doesNotMatch(form, new RegExp(`name="${removed}"`));
+  }
 });
 
 test("custom product images are present", async () => {
-  const files = ["lifestyle-gifts.jpg", "teaware-home.jpg", "lunar-new-year.jpg", "jan-day-originals.jpg", "weddings.jpg"];
+  const files = ["lifestyle-gifts.jpg", "jewelry.jpg", "decorations.jpg", "originals.jpg"];
   await Promise.all(files.map((name) => access(new URL(`../public/images/shop/${name}`, import.meta.url))));
 });
 

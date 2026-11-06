@@ -9,7 +9,7 @@ A responsive, browse-only website for Jan Day, a small design-led gift shop loca
 - Separate Weddings treatment with a complete quote inquiry form
 - Holiday gift box and corporate gifting inquiry flow
 - Responsive mobile navigation and accessible forms
-- Owner-confirmation placeholders for the Jan Day name story, hours, parking, phone, Instagram, and wedding-package details
+- Owner-confirmation placeholders for the Jan Day name story, hours, parking, phone, and wedding-package details
 - Existing private inventory administration routes remain available under `/admin`
 
 See [`docs/SITE_CONTENT.md`](docs/SITE_CONTENT.md) for the sitemap and page-copy handoff, and [`DESIGN.md`](DESIGN.md) for the design system.
